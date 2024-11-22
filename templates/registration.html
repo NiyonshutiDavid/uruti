@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <title>
-      Sign_in &#8211; Uruti
+      Registration &#8211; Uruti
     </title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel="alternate" type="application/rss+xml" title="Uruti &raquo; Feed"
@@ -122,7 +122,7 @@
         }))
       } ((window, document), window._wpemojiSettings);
     </script>
-    <link rel='stylesheet' id='rm_material_icons-css' href='./css/custom-registration-form-builder-with-submission-manager-admin-css-material-icons.css'
+    <link rel='stylesheet' id='rm_material_icons-css' href='{{ url_for('static', filename='css/custom-registration-form-builder-with-submission-manager-admin-css-material-icons.css') }}'
     media='all' />
     <style id='wp-emoji-styles-inline-css'>
       img.wp-smiley, img.emoji { display: inline !important; border: none !important;
@@ -231,53 +231,43 @@
       2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;} :root :where(.wp-block-pullquote){font-size:
       1.5em;line-height: 1.6;}
     </style>
-    <link rel='stylesheet' id='profilegrid-user-profiles-groups-and-communities-css'
-    href='./css/profilegrid-user-profiles-groups-and-communities-public-css-profile-magic-public.css'
-    media='all' />
-    <link rel='stylesheet' id='pm-font-awesome-css' href='./css/profilegrid-user-profiles-groups-and-communities-public-css-font-awesome.css'
-    media='all' />
-    <link rel='stylesheet' id='pg-password-checker-css' href='./css/profilegrid-user-profiles-groups-and-communities-public-css-pg-password-checker.css'
-    media='all' />
-    <link rel='stylesheet' id='pg-profile-menu-css' href='./css/profilegrid-user-profiles-groups-and-communities-public-css-pg-profile-menu.css'
-    media='all' />
-    <link rel='stylesheet' id='pg-responsive-css' href='./css/profilegrid-user-profiles-groups-and-communities-public-css-pg-responsive-public.css'
-    media='all' />
-    <link rel='stylesheet' id='hello-elementor-css' href='./css/hello-elementor-style.min.css'
-    media='all' />
-    <link rel='stylesheet' id='hello-elementor-theme-style-css' href='./css/hello-elementor-theme.min.css'
-    media='all' />
-    <link rel='stylesheet' id='hello-elementor-header-footer-css' href='./css/hello-elementor-header-footer.min.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-frontend-css' href='./css/elementor-assets-css-frontend.min.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-post-5-css' href='./css/elementor-css-post-5.css'
-    media='all' />
-    <link rel='stylesheet' id='swiper-css' href='./css/elementor-assets-lib-swiper-v8-css-swiper.min.css'
-    media='all' />
-    <link rel='stylesheet' id='e-swiper-css' href='./css/elementor-assets-css-conditionals-e-swiper.min.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-pro-css' href='./css/elementor-pro-assets-css-frontend.min.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-global-css' href='./css/elementor-css-global.css'
-    media='all' />
-    <link rel='stylesheet' id='widget-image-css' href='./css/elementor-assets-css-widget-image.min.css'
-    media='all' />
-    <link rel='stylesheet' id='widget-heading-css' href='./css/elementor-assets-css-widget-heading.min.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-post-928-css' href='./css/elementor-css-post-928.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-post-27-css' href='./css/elementor-css-post-27.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-post-475-css' href='./css/elementor-css-post-475.css'
-    media='all' />
-    <link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Inter+Tight%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CInter%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap&#038;ver=6.6.2'
-    media='all' />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" id="profilegrid-user-profiles-groups-and-communities-css" href="{{ url_for('static', filename='css/profilegrid-user-profiles-groups-and-communities-public-css-profile-magic-public.css') }}" media="all" />
+    <link rel="stylesheet" id="pm-font-awesome-css" href="{{ url_for('static', filename='css/profilegrid-user-profiles-groups-and-communities-public-css-font-awesome.css') }}" media="all" />
+    <link rel="stylesheet" id="pg-password-checker-css" href="{{ url_for('static', filename='css/profilegrid-user-profiles-groups-and-communities-public-css-pg-password-checker.css') }}" media="all" />
+    <link rel="stylesheet" id="pg-profile-menu-css" href="{{ url_for('static', filename='css/profilegrid-user-profiles-groups-and-communities-public-css-pg-profile-menu.css') }}" media="all" />
+    <link rel="stylesheet" id="pg-responsive-css" href="{{ url_for('static', filename='css/profilegrid-user-profiles-groups-and-communities-public-css-pg-responsive-public.css') }}" media="all" />
+    <link rel="stylesheet" id="hello-elementor-css" href="{{ url_for('static', filename='css/hello-elementor-style.min.css') }}" media="all" />
+    <link rel="stylesheet" id="hello-elementor-theme-style-css" href="{{ url_for('static', filename='css/hello-elementor-theme.min.css') }}" media="all" />
+    <link rel="stylesheet" id="hello-elementor-header-footer-css" href="{{ url_for('static', filename='css/hello-elementor-header-footer.min.css') }}" media="all" />
+    <link rel="stylesheet" id="elementor-frontend-css" href="{{ url_for('static', filename='css/elementor-assets-css-frontend.min.css') }}"  media="all" />
+    <link rel="stylesheet" id="elementor-post-5-css" href="{{ url_for('static', filename='css/elementor-css-post-5.css') }}" media="all" />
+    <link rel="stylesheet" id="swiper-css" href="{{ url_for('static', filename='css/elementor-assets-lib-swiper-v8-css-swiper.min.css') }}" media="all" />
+    <link rel="stylesheet" id="e-swiper-css" href="{{ url_for('static', filename='css/elementor-assets-css-conditionals-e-swiper.min.css') }}" media="all" />
+    <link rel="stylesheet" id="elementor-pro-css" href="{{ url_for('static', filename='css/elementor-pro-assets-css-frontend.min.css') }}" media="all" />
+    <link rel="stylesheet" id="elementor-global-css" href="{{ url_for('static', filename='css/elementor-css-global.css') }}" media="all" />
+    <link rel="stylesheet" id="widget-nested-tabs-css"
+    href="{{ url_for('static', filename='css/elementor-assets-css-widget-nested-tabs.min.css') }}"
+    media="all" />
+<link rel="stylesheet" id="elementor-post-298-css"
+    href="{{ url_for('static', filename='css/elementor-css-post-298.css') }}"
+    media="all" />
+<link rel="stylesheet" id="elementor-post-27-css"
+    href="{{ url_for('static', filename='css/elementor-css-post-27.css') }}"
+    media="all" />
+<link rel="stylesheet" id="elementor-post-475-css"
+    href="{{ url_for('static', filename='css/elementor-css-post-475.css') }}"
+    media="all" />
+<!-- Google Fonts Link (Unchanged) -->
+<link rel="stylesheet" id="google-fonts-1-css"
+    href="https://fonts.googleapis.com/css?family=Inter+Tight%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CInter%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap&#038;ver=6.6.2"
+    media="all" />
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
     <script>
       /* <![CDATA[ */
       var rcewpp = {
         "ajax_url": "http://uruti.rw/wp-admin/admin-ajax.php",
-        "nonce": "062ff6eab6",
+        "nonce": "c880a022a9",
         "home_url": "http://uruti.rw/",
         "settings_icon": 'http://uruti.rw/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
         "settings_hover_icon": 'http://uruti.rw/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
@@ -285,18 +275,16 @@
       /* ]]\> */
       
     </script>
-    <script src="./js/jquery-jquery.min.js" id="jquery-core-js">
-    </script>
-    <script src="./js/jquery-jquery-migrate.min.js" id="jquery-migrate-js">
-    </script>
-    <script src="./js/profilegrid-user-profiles-groups-and-communities-public-js-pg-profile-menu.js"
-    id="pg-profile-menu.js-js">
-    </script>
+   <script src="{{ url_for('static', filename='js/jquery-jquery.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/jquery-jquery-migrate.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/profilegrid-user-profiles-groups-and-communities-public-js-pg-profile-menu.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/profilegrid-user-profiles-groups-and-communities-public-js-profile-magic-public.js') }}"></script>
+   
     <script id="profilegrid-user-profiles-groups-and-communities-js-extra">
       var pm_ajax_object = {
         "ajax_url": "http:\/\/uruti.rw\/wp-admin\/admin-ajax.php",
         "plugin_emoji_url": "http:\/\/uruti.rw\/wp-content\/plugins\/profilegrid-user-profiles-groups-and-communities\/public\/partials\/images\/img",
-        "nonce": "5a62d9a1ec"
+        "nonce": "3b19475089"
       };
       var pm_error_object = {
         "valid_email": "Please enter a valid e-mail address.",
@@ -350,17 +338,17 @@
     id="modernizr-custom.min.js-js">
     </script>
     <link rel="https://api.w.org/" href="http://uruti.rw/wp-json/" />
-    <link rel="alternate" title="JSON" type="application/json" href="http://uruti.rw/wp-json/wp/v2/pages/928"
+    <link rel="alternate" title="JSON" type="application/json" href="http://uruti.rw/wp-json/wp/v2/pages/298"
     />
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://uruti.rw/xmlrpc.php?rsd"
     />
     <meta name="generator" content="WordPress 6.6.2" />
-    <link rel="canonical" href="http://uruti.rw/sign_in/" />
-    <link rel='shortlink' href='http://uruti.rw/?p=928' />
+    <link rel="canonical" href="http://uruti.rw/registration/" />
+    <link rel='shortlink' href='http://uruti.rw/?p=298' />
     <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed"
-    href="http://uruti.rw/wp-json/oembed/1.0/embed?url=http%3A%2F%2Furuti.rw%2Fsign_in%2F"
+    href="http://uruti.rw/wp-json/oembed/1.0/embed?url=http%3A%2F%2Furuti.rw%2Fregistration%2F"
     />
-    <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="http://uruti.rw/wp-json/oembed/1.0/embed?url=http%3A%2F%2Furuti.rw%2Fsign_in%2F&#038;format=xml"
+    <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="http://uruti.rw/wp-json/oembed/1.0/embed?url=http%3A%2F%2Furuti.rw%2Fregistration%2F&#038;format=xml"
     />
     <meta name="generator" content="Elementor 3.24.7; features: e_font_icon_svg, additional_custom_breakpoints, e_optimized_control_loading, e_element_cache; settings: css_print_method-external, google_font-enabled, font_display-swap">
     <style>
@@ -374,17 +362,20 @@
       .e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload)
       * { background-image: none !important; } }
     </style>
-    <link rel="icon" href="./images/cropped-Uruti-logo-32x32.png" sizes="32x32"
-    />
-    <link rel="icon" href="./images/cropped-Uruti-logo-192x192.png" sizes="192x192"
-    />
-    <link rel="apple-touch-icon" href="./images/cropped-Uruti-logo-180x180.png"
-    />
+    <link rel="icon" 
+      href="{{ url_for('static', filename='images/cropped-Uruti-logo-32x32.png') }}" 
+      sizes="32x32" />
+<link rel="icon" 
+      href="{{ url_for('static', filename='images/cropped-Uruti-logo-192x192.png') }}" 
+      sizes="192x192" />
+<link rel="apple-touch-icon" 
+      href="{{ url_for('static', filename='images/cropped-Uruti-logo-180x180.png') }}" />
+
     <meta name="msapplication-TileImage" content="http://uruti.rw/wp-content/uploads/2024/10/cropped-Uruti-logo-270x270.png"
     />
   </head>
   
-  <body class="page-template page-template-elementor_header_footer page page-id-928 elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-928 theme-helloelementor">
+  <body class="page-template page-template-elementor_header_footer page page-id-298 elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-298 theme-helloelementor">
     <a class="skip-link screen-reader-text" href="#content">
       Skip to content
     </a>
@@ -396,8 +387,8 @@
           <div class="elementor-element elementor-element-7d0f071 elementor-widget__width-initial elementor-widget elementor-widget-image"
           data-id="7d0f071" data-element_type="widget" data-widget_type="image.default">
             <div class="elementor-widget-container">
-              <img width="222" height="115" src="./images/2024-10-Uruti-logo.png" class="attachment-large size-large wp-image-17"
-              alt="" />
+              <img width="131" height="74" src="{{ url_for('static', filename='images/2024-10-Uruti-logo-e1732096555217.png') }}"
+              class="attachment-large size-large wp-image-17" alt="" />
             </div>
           </div>
           <div class="elementor-element elementor-element-eb66472 elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu"
@@ -407,7 +398,7 @@
               <nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-none">
                 <ul id="menu-1-eb66472" class="elementor-nav-menu">
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-20">
-                    <a href="http://uruti.rw/" class="elementor-item">
+                    <a href="{{ url_for('home') }}" class="elementor-item">
                       Home
                     </a>
                   </li>
@@ -426,8 +417,8 @@
                       Contact Us
                     </a>
                   </li>
-                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
-                    <a href="http://uruti.rw/registration/" class="elementor-item">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-298 current_page_item menu-item-347">
+                    <a href="./registration.html" aria-current="page" class="elementor-item elementor-item-active">
                       Registration
                     </a>
                   </li>
@@ -472,8 +463,9 @@
                       Contact Us
                     </a>
                   </li>
-                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
-                    <a href="http://uruti.rw/registration/" class="elementor-item" tabindex="-1">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-298 current_page_item menu-item-347">
+                    <a href="./registration.html" aria-current="page" class="elementor-item elementor-item-active"
+                    tabindex="-1">
                       Registration
                     </a>
                   </li>
@@ -481,21 +473,14 @@
               </nav>
             </div>
           </div>
-          <div class="elementor-element elementor-element-7d14850 elementor-widget elementor-widget-button"
-          data-id="7d14850" data-element_type="widget" data-widget_type="button.default">
+          <div class="elementor-element elementor-element-6338bab elementor-widget elementor-widget-button"
+          data-id="6338bab" data-element_type="widget" data-widget_type="button.default">
             <div class="elementor-widget-container">
               <div class="elementor-button-wrapper">
-                <a class="elementor-button elementor-button-link elementor-size-sm" href="http://uruti.rw/my-profile/">
+                <a class="elementor-button elementor-button-link elementor-size-sm" href="http://uruti.rw/login/">
                   <span class="elementor-button-content-wrapper">
-                    <span class="elementor-button-icon">
-                      <svg aria-hidden="true" class="e-font-icon-svg e-far-user-circle" viewbox="0 0 496 512"
-                      xmlns="http://www.w3.org/2000/svg">
-                        <path d="M248 104c-53 0-96 43-96 96s43 96 96 96 96-43 96-96-43-96-96-96zm0 144c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm0-240C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-49.7 0-95.1-18.3-130.1-48.4 14.9-23 40.4-38.6 69.6-39.5 20.8 6.4 40.6 9.6 60.5 9.6s39.7-3.1 60.5-9.6c29.2 1 54.7 16.5 69.6 39.5-35 30.1-80.4 48.4-130.1 48.4zm162.7-84.1c-24.4-31.4-62.1-51.9-105.1-51.9-10.2 0-26 9.6-57.6 9.6-31.5 0-47.4-9.6-57.6-9.6-42.9 0-80.6 20.5-105.1 51.9C61.9 339.2 48 299.2 48 256c0-110.3 89.7-200 200-200s200 89.7 200 200c0 43.2-13.9 83.2-37.3 115.9z">
-                        </path>
-                      </svg>
-                    </span>
                     <span class="elementor-button-text">
-                      My Account
+                      Sign in
                     </span>
                   </span>
                 </a>
@@ -505,78 +490,338 @@
         </div>
       </div>
     </div>
-    <div data-elementor-type="wp-page" data-elementor-id="928" class="elementor elementor-928"
+    <div data-elementor-type="wp-page" data-elementor-id="298" class="elementor elementor-298"
     data-elementor-post-type="page">
-      <div class="elementor-element elementor-element-a0be426 e-flex e-con-boxed e-con e-parent"
-      data-id="a0be426" data-element_type="container">
+      <div class="elementor-element elementor-element-5645e53 e-flex e-con-boxed e-con e-parent"
+      data-id="5645e53" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
         <div class="e-con-inner">
-          <div class="elementor-element elementor-element-246844e e-con-full e-flex e-con e-child"
-          data-id="246844e" data-element_type="container">
-            <div class="elementor-element elementor-element-02a032f elementor-widget elementor-widget-image"
-            data-id="02a032f" data-element_type="widget" data-widget_type="image.default">
+          <div class="elementor-element elementor-element-069c3da e-con-full e-flex e-con e-child"
+          data-id="069c3da" data-element_type="container">
+            <div class="elementor-element elementor-element-3f1727e e-n-tabs-mobile elementor-widget elementor-widget-n-tabs"
+            data-id="3f1727e" data-element_type="widget" data-settings="{&quot;tabs_justify_horizontal&quot;:&quot;stretch&quot;,&quot;horizontal_scroll&quot;:&quot;disable&quot;}"
+            data-widget_type="nested-tabs.default">
               <div class="elementor-widget-container">
-                <img decoding="async" width="131" height="74" src="./images/2024-10-Uruti-logo-e1732096555217.png"
-                class="attachment-large size-large wp-image-17" alt="" />
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-9eaaac5 elementor-widget elementor-widget-heading"
-            data-id="9eaaac5" data-element_type="widget" data-widget_type="heading.default">
-              <div class="elementor-widget-container">
-                <h2 class="elementor-heading-title elementor-size-default">
-                  Welcomes you back
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div class="elementor-element elementor-element-0c7bf54 e-con-full e-flex e-con e-child"
-          data-id="0c7bf54" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-            <div class="elementor-element elementor-element-3fbc806 elementor-widget elementor-widget-login"
-            data-id="3fbc806" data-element_type="widget" data-widget_type="login.default">
-              <div class="elementor-widget-container">
-                <form class="elementor-login elementor-form" method="post" action="http://uruti.rw/wp-login.php">
-                  <input type="hidden" name="redirect_to" value="http://uruti.rw/investor_dashboard/">
-                  <div class="elementor-form-fields-wrapper">
-                    <div class="elementor-field-type-text elementor-field-group elementor-column elementor-col-100 elementor-field-required">
-                      <label for="user-3fbc806" class="elementor-field-label">
-                        Email Address
-                      </label>
-                      <input size="1" type="text" name="log" id="user-3fbc806" placeholder="Username or Email Address"
-                      class="elementor-field elementor-field-textual elementor-size-sm">
-                    </div>
-                    <div class="elementor-field-type-text elementor-field-group elementor-column elementor-col-100 elementor-field-required">
-                      <label for="password-3fbc806" class="elementor-field-label">
-                        Password
-                      </label>
-                      <input size="1" type="password" name="pwd" id="password-3fbc806" placeholder="Password"
-                      class="elementor-field elementor-field-textual elementor-size-sm">
-                    </div>
-                    <div class="elementor-field-type-checkbox elementor-field-group elementor-column elementor-col-100 elementor-remember-me">
-                      <label for="elementor-login-remember-me">
-                        <input type="checkbox" id="elementor-login-remember-me" name="rememberme"
-                        value="forever">
-                        Remember Me
-                      </label>
-                    </div>
-                    <div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100">
-                      <button type="submit" class="elementor-size-sm elementor-button" name="wp-submit">
-                        <span class="elementor-button-text">
-                          Log In
-                        </span>
-                      </button>
-                    </div>
-                    <div class="elementor-field-group elementor-column elementor-col-100">
-                      <a class="elementor-lost-password" href="./forgot-password.html">
-                        Lost your password?
-                      </a>
-                      <span class="elementor-login-separator">
-                        |
+                <div class="e-n-tabs" data-widget-number="66155134" aria-label="Tabs. Open items with Enter or Space, close with Escape and navigate using the Arrow keys.">
+                  <div class="e-n-tabs-heading" role="tablist">
+                    <button id="e-n-tab-title-661551341" class="e-n-tab-title" aria-selected="true"
+                    data-tab-index="1" role="tab" tabindex="0" aria-controls="e-n-tab-content-661551341"
+                    style="--n-tabs-title-order: 1;">
+                      <span class="e-n-tab-title-text">
+                        Entrepreneur
                       </span>
-                      <a class="elementor-register" href="./registration.html">
-                        Register
-                      </a>
+                    </button>
+                    <button id="e-n-tab-title-661551342" class="e-n-tab-title" aria-selected="false"
+                    data-tab-index="2" role="tab" tabindex="-1" aria-controls="e-n-tab-content-661551342"
+                    style="--n-tabs-title-order: 2;">
+                      <span class="e-n-tab-title-text">
+                        Investor
+                      </span>
+                    </button>
+                    <button id="e-n-tab-title-661551343" class="e-n-tab-title" aria-selected="false"
+                    data-tab-index="3" role="tab" tabindex="-1" aria-controls="e-n-tab-content-661551343"
+                    style="--n-tabs-title-order: 3;">
+                      <span class="e-n-tab-title-text">
+                        Mentor
+                      </span>
+                    </button>
+                  </div>
+                  <div class="e-n-tabs-content">
+                    <div id="e-n-tab-content-661551341" role="tabpanel" aria-labelledby="e-n-tab-title-661551341"
+                    data-tab-index="1" style="--n-tabs-title-order: 1;" class="e-active elementor-element elementor-element-241a543 e-con-full e-flex e-con e-child"
+                    data-id="241a543" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+                      <div class="elementor-element elementor-element-bc6442e elementor-widget__width-initial elementor-button-align-stretch elementor-widget elementor-widget-form"
+                      data-id="bc6442e" data-element_type="widget" data-settings="{&quot;button_width&quot;:&quot;50&quot;,&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}"
+                      data-widget_type="form.default">
+                        <div class="elementor-widget-container">
+							<form class="elementor-form" method="post" action="/register/entrepreneur" name="EntrepreneurForm">
+								<input type="hidden" name="post_id" value="298" />
+								<input type="hidden" name="form_id" value="bc6442e" />
+								<input type="hidden" name="referer_title" value="Registration" />
+								<input type="hidden" name="queried_id" value="298" />
+							  
+								<div class="elementor-form-fields-wrapper elementor-labels-above">
+								  <!-- Full Name -->
+								  <div class="elementor-field-group elementor-field-required">
+									<label for="full_name" class="elementor-field-label">Full Names</label>
+									<input type="text" name="full_name" id="full_name" 
+										   class="elementor-field elementor-size-sm elementor-field-textual"
+										   placeholder="Enter your first and last names" 
+										   required="required" aria-required="true">
+								  </div>
+							  
+								  <!-- Email -->
+								  <div class="elementor-field-group elementor-field-required">
+									<label for="email" class="elementor-field-label">Email</label>
+									<input type="email" name="email" id="email" 
+										   class="elementor-field elementor-size-sm elementor-field-textual" 
+										   placeholder="Email" 
+										   required="required" aria-required="true">
+								  </div>
+							  
+								  <!-- Password -->
+								  <div class="elementor-field-group elementor-field-required">
+									<label for="password" class="elementor-field-label">Password</label>
+									<input type="password" name="password" id="password" 
+										   class="elementor-field elementor-size-sm elementor-field-textual"
+										   placeholder="Enter Unique Password" 
+										   required="required" aria-required="true">
+								  </div>
+							  
+								  <!-- Phone Number -->
+								  <div class="elementor-field-group elementor-field-required">
+									<label for="phone" class="elementor-field-label">Phone number</label>
+									<input type="text" name="phone" id="phone" 
+										   class="elementor-field elementor-size-sm elementor-field-textual" 
+										   placeholder="+250 7............" 
+										   required="required" aria-required="true">
+								  </div>
+							  
+								  <!-- LinkedIn Profile -->
+								  <div class="elementor-field-group elementor-field-required">
+									<label for="linkedin" class="elementor-field-label">LinkedIn Profile</label>
+									<input type="url" name="linkedin" id="linkedin" 
+										   class="elementor-field elementor-size-sm elementor-field-textual"
+										   placeholder="Link to your LinkedIn account" 
+										   required="required" aria-required="true">
+								  </div>
+							  
+								  <!-- Business Name -->
+								  <div class="elementor-field-group elementor-field-required">
+									<label for="business_name" class="elementor-field-label">Business Name</label>
+									<input type="text" name="business_name" id="business_name" 
+										   class="elementor-field elementor-size-sm elementor-field-textual" 
+										   placeholder="Your business name or project name" 
+										   required="required" aria-required="true">
+								  </div>
+							  
+								  <!-- Business Type -->
+								  <div class="elementor-field-group elementor-field-required">
+									<label for="business_type" class="elementor-field-label">Business Type</label>
+									<select name="business_type" id="business_type" 
+											class="elementor-field elementor-size-sm elementor-field-textual"
+											required="required" aria-required="true">
+									  <option value="" disabled selected>Select an option</option>
+									  <option value="Farming">Farming</option>
+									  <option value="AgriTech">AgriTech</option>
+									  <option value="Livestock">Livestock</option>
+									  <option value="Poultry">Poultry</option>
+									  <option value="Beekeeping">Beekeeping</option>
+									  <option value="Floriculture">Floriculture</option>
+									</select>
+								  </div>
+							  
+								  <!-- Business Stage -->
+								  <div class="elementor-field-group elementor-field-required">
+									<label for="business_stage" class="elementor-field-label">Stage of Business</label>
+									<select name="business_stage" id="business_stage" 
+											class="elementor-field elementor-size-sm elementor-field-textual" 
+											required="required" aria-required="true">
+									  <option value="" disabled selected>Select an option</option>
+									  <option value="Idea">Idea</option>
+									  <option value="Startup">Startup</option>
+									  <option value="Established">Established</option>
+									</select>
+								  </div>
+							  
+								  <!-- Need Investment -->
+								  <div class="elementor-field-group elementor-field-required">
+									<label class="elementor-field-label">Do you need investment?</label>
+									<div class="elementor-field-subgroup elementor-subgroup-inline">
+									  <span class="elementor-field-option">
+										<input type="radio" value="Yes" id="need_investment_yes" name="need_investment" required>
+										<label for="need_investment_yes">Yes</label>
+									  </span>
+									  <span class="elementor-field-option">
+										<input type="radio" value="No" id="need_investment_no" name="need_investment" required>
+										<label for="need_investment_no">No</label>
+									  </span>
+									</div>
+								  </div>
+							  
+								  <!-- Google reCAPTCHA -->
+								  <div class="elementor-field-group elementor-column">
+									<div class="elementor-field" id="recaptcha">
+									  <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+									</div>
+								  </div>
+							  
+								  <!-- Submit Button -->
+								  <div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-50 e-form__buttons">
+									<button type="submit" class="elementor-button elementor-size-sm">
+									  <span class="elementor-button-text">Submit</span>
+									</button>
+								  </div>
+								</div>
+							  </form>							  
+                        </div>
+                      </div>
+                    </div>
+                    <div id="e-n-tab-content-661551342" role="tabpanel" aria-labelledby="e-n-tab-title-661551342"
+                    data-tab-index="2" style="--n-tabs-title-order: 2;" class="elementor-element elementor-element-5b589cb e-con-full e-flex e-con e-child"
+                    data-id="5b589cb" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+                      <div class="elementor-element elementor-element-716a241 elementor-widget__width-initial elementor-button-align-stretch elementor-widget elementor-widget-form"
+                      data-id="716a241" data-element_type="widget" data-settings="{&quot;button_width&quot;:&quot;50&quot;,&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}"
+                      data-widget_type="form.default">
+                        <div class="elementor-widget-container">
+							<form class="elementor-form" method="post" action="/register/investor" name="New Form">
+								<input type="hidden" name="post_id" value="298" />
+								<input type="hidden" name="form_id" value="716a241" />
+								<input type="hidden" name="referer_title" value="Registration" />
+								<input type="hidden" name="queried_id" value="298" />
+							  
+								<div class="elementor-form-fields-wrapper elementor-labels-above">
+								  <div class="elementor-field-group elementor-column elementor-field-required">
+									<label for="business-name" class="elementor-field-label">Business Name</label>
+									<input type="text" name="business_name" id="business-name" class="elementor-field elementor-size-sm" placeholder="Your business or project name" required>
+								  </div>
+							  
+								  <div class="elementor-field-group elementor-column elementor-field-required">
+									<label for="email" class="elementor-field-label">Email</label>
+									<input type="email" name="email" id="email" class="elementor-field elementor-size-sm" placeholder="Email" required>
+								  </div>
+							  
+								  <div class="elementor-field-group elementor-column elementor-field-required">
+									<label for="password" class="elementor-field-label">Password</label>
+									<input type="password" name="password" id="password" class="elementor-field elementor-size-sm" placeholder="Enter unique password" required>
+								  </div>
+							  
+								  <div class="elementor-field-group elementor-column elementor-field-required">
+									<label for="phone" class="elementor-field-label">Phone Number</label>
+									<input type="text" name="phone" id="phone" class="elementor-field elementor-size-sm" placeholder="+250 7..." required>
+								  </div>
+							  
+								  <div class="elementor-field-group elementor-column elementor-field-required">
+									<label for="linkedin" class="elementor-field-label">LinkedIn Profile</label>
+									<input type="url" name="linkedin" id="linkedin" class="elementor-field elementor-size-sm" placeholder="Link to your LinkedIn account" required>
+								  </div>
+							  
+								  <div class="elementor-field-group elementor-column elementor-field-required">
+									<label for="investment-stage" class="elementor-field-label">Preferred Investment Stage</label>
+									<select name="investment_stage" id="investment-stage" class="elementor-field elementor-size-sm" required>
+									  <option value="Early-stage">Early-stage</option>
+									  <option value="Growth-stage">Growth-stage</option>
+									  <option value="Mature-stage">Mature-stage</option>
+									  <option value="All stages">All stages</option>
+									</select>
+								  </div>
+							  
+								  <div class="elementor-field-group elementor-column elementor-field-required">
+									<label for="investment-size" class="elementor-field-label">Typical Investment Size</label>
+									<select name="investment_size" id="investment-size" class="elementor-field elementor-size-sm" required>
+									  <option value="$1,000-$10,000">$1,000-$10,000</option>
+									  <option value="$10,000-$50,000">$10,000-$50,000</option>
+									  <option value="$50,000-$100,000">$50,000-$100,000</option>
+									  <option value="$100,000+">$100,000+</option>
+									</select>
+								  </div>
+							  
+								  <div class="elementor-field-group elementor-column elementor-field-required">
+									<label for="business-description" class="elementor-field-label">Business Description</label>
+									<textarea name="business_description" id="business-description" class="elementor-field elementor-size-sm" rows="4" placeholder="Describe your business, mission, or vision" required></textarea>
+								  </div>
+							  
+								  <div class="elementor-field-group elementor-column">
+									<label for="business-website" class="elementor-field-label">Business Website</label>
+									<input type="url" name="business_website" id="business-website" class="elementor-field elementor-size-sm" placeholder="Company website URL">
+								  </div>
+							  
+								  <div class="elementor-field-group elementor-column">
+									<div class="g-recaptcha" data-sitekey="6LcstH0qAAAAAHmQNdRrhSKrYNN1tjnX_qt_drY6"></div>
+								  </div>
+							  
+								  <div class="elementor-field-group elementor-column">
+									<button type="submit" class="elementor-button elementor-size-sm">Submit</button>
+								  </div>
+								</div>
+							  </form>							  
+                        </div>
+                      </div>
+                    </div>
+                    <div id="e-n-tab-content-661551343" role="tabpanel" aria-labelledby="e-n-tab-title-661551343"
+                    data-tab-index="3" style="--n-tabs-title-order: 3;" class="elementor-element elementor-element-89aacd4 e-con-full e-flex e-con e-child"
+                    data-id="89aacd4" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+                      <div class="elementor-element elementor-element-2639d21 elementor-widget__width-initial elementor-button-align-stretch elementor-widget elementor-widget-form"
+                      data-id="2639d21" data-element_type="widget" data-settings="{&quot;button_width&quot;:&quot;50&quot;,&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}"
+                      data-widget_type="form.default">
+                        <div class="elementor-widget-container">
+							<form class="elementor-form" action="/register/mentor" method="post" name="New Form">
+								<input type="hidden" name="post_id" value="298" />
+								<input type="hidden" name="form_id" value="2639d21" />
+								<input type="hidden" name="referer_title" value="Registratio" />
+								<input type="hidden" name="queried_id" value="298" />
+								<div class="elementor-form-fields-wrapper elementor-labels-above">
+								  <!-- Full Names -->
+								  <div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-80 elementor-field-required elementor-mark-required">
+									<label for="form-field-name" class="elementor-field-label">Full Names</label>
+									<input size="1" type="text" name="form_fields[name]" id="form-field-name"
+									  class="elementor-field elementor-size-sm elementor-field-textual" placeholder="Enter your first and last names" required="required" aria-required="true">
+								  </div>
+								  <!-- Email -->
+								  <div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-80 elementor-field-required elementor-mark-required">
+									<label for="form-field-email" class="elementor-field-label">Email</label>
+									<input size="1" type="email" name="form_fields[email]" id="form-field-email"
+									  class="elementor-field elementor-size-sm elementor-field-textual" placeholder="Email" required="required" aria-required="true">
+								  </div>
+								  <!-- Password -->
+								  <div class="elementor-field-type-password elementor-field-group elementor-column elementor-field-group-field_22143b0 elementor-col-80 elementor-field-required elementor-mark-required">
+									<label for="form-field-field_22143b0" class="elementor-field-label">Password</label>
+									<input size="1" type="password" name="form_fields[field_22143b0]" id="form-field-field_22143b0"
+									  class="elementor-field elementor-size-sm elementor-field-textual" placeholder="Enter Unique Password" required="required" aria-required="true">
+								  </div>
+								  <!-- Phone Number -->
+								  <div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_b5eb880 elementor-col-80 elementor-field-required elementor-mark-required">
+									<label for="form-field-field_b5eb880" class="elementor-field-label">Phone number</label>
+									<input size="1" type="text" name="form_fields[field_b5eb880]" id="form-field-field_b5eb880"
+									  class="elementor-field elementor-size-sm elementor-field-textual" placeholder="+250 7............" required="required" aria-required="true">
+								  </div>
+								  <!-- LinkedIn Profile -->
+								  <div class="elementor-field-type-url elementor-field-group elementor-column elementor-field-group-field_df1cb11 elementor-col-80 elementor-field-required elementor-mark-required">
+									<label for="form-field-field_df1cb11" class="elementor-field-label">LinkedIn profile</label>
+									<input size="1" type="url" name="form_fields[field_df1cb11]" id="form-field-field_df1cb11"
+									  class="elementor-field elementor-size-sm elementor-field-textual" placeholder="Link to your LinkedIn account" required="required" aria-required="true">
+								  </div>
+								  <!-- Area of Expertise -->
+								  <div class="elementor-field-type-select elementor-field-group elementor-column elementor-field-group-field_f33d1c5 elementor-col-80 elementor-field-required elementor-mark-required">
+									<label for="form-field-field_f33d1c5" class="elementor-field-label">Area of expertise</label>
+									<div class="elementor-field elementor-select-wrapper remove-before">
+									  <select name="form_fields[field_f33d1c5]" id="form-field-field_f33d1c5" class="elementor-field-textual elementor-size-sm" required="required" aria-required="true">
+										<option value="Farming">Farming</option>
+										<option value="AgriTech">AgriTech</option>
+										<option value="Livestock">Livestock</option>
+										<option value="Poutry">Poutry</option>
+										<option value="Bee keeping">Bee keeping</option>
+										<option value="Floriculture">Floriculture</option>
+									  </select>
+									</div>
+								  </div>
+								  <!-- Years of Experience -->
+								  <div class="elementor-field-type-number elementor-field-group elementor-column elementor-field-group-field_12072c6 elementor-col-80 elementor-field-required elementor-mark-required">
+									<label for="form-field-field_12072c6" class="elementor-field-label">Years of experience</label>
+									<input type="number" name="form_fields[field_12072c6]" id="form-field-field_12072c6"
+									  class="elementor-field elementor-size-sm elementor-field-textual" placeholder="How many years of experience" required="required" aria-required="true">
+								  </div>
+								  <!-- reCAPTCHA -->
+								  <div class="elementor-field-type-recaptcha elementor-field-group elementor-column elementor-field-group-field_2ade78a elementor-col-100">
+									<div class="elementor-field" id="form-field-field_2ade78a">
+									  <div class="elementor-g-recaptcha" data-sitekey="6LcstH0qAAAAAHmQNdRrhSKrYNN1tjnX_qt_drY6" data-type="v2_checkbox" data-theme="light" data-size="normal">
+									  </div>
+									</div>
+								  </div>
+								  <!-- Submit Button -->
+								  <div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-50 e-form__buttons">
+									<button type="submit" class="elementor-button elementor-size-sm">
+									  <span>
+										<span class="elementor-button-text">Submit</span>
+									  </span>
+									</button>
+								  </div>
+								</div>
+							  </form>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
@@ -624,8 +869,8 @@
                         Contact Us
                       </a>
                     </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
-                      <a href="http://uruti.rw/registration/" class="elementor-item">
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-298 current_page_item menu-item-347">
+                      <a href="./registration.html" aria-current="page" class="elementor-item elementor-item-active">
                         Registration
                       </a>
                     </li>
@@ -654,8 +899,9 @@
                         Contact Us
                       </a>
                     </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
-                      <a href="http://uruti.rw/registration/" class="elementor-item" tabindex="-1">
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-298 current_page_item menu-item-347">
+                      <a href="./registration.html" aria-current="page" class="elementor-item elementor-item-active"
+                      tabindex="-1">
                         Registration
                       </a>
                     </li>
@@ -722,8 +968,8 @@
                 <form class="elementor-form" method="post" name="Newsletter Form">
                   <input type="hidden" name="post_id" value="475" />
                   <input type="hidden" name="form_id" value="b1d5ab4" />
-                  <input type="hidden" name="referer_title" value="Sign_in" />
-                  <input type="hidden" name="queried_id" value="928" />
+                  <input type="hidden" name="referer_title" value="Registratio" />
+                  <input type="hidden" name="queried_id" value="298" />
                   <div class="elementor-form-fields-wrapper elementor-labels-">
                     <div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-60 elementor-md-70 elementor-field-required">
                       <label for="form-field-email" class="elementor-field-label elementor-screen-only">
@@ -778,8 +1024,8 @@
         document.addEventListener(event, lazyloadRunObserver);
       });
     </script>
-    <link rel='stylesheet' id='widget-icon-list-css' href='./css/elementor-assets-css-widget-icon-list.min.css'
-    media='all' />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/elementor-assets-css-widget-image.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/elementor-assets-css-widget-text-editor.min.css') }}">
     <script src="./js/jquery-ui-core.min.js" id="jquery-ui-core-js">
     </script>
     <script src="./js/jquery-ui-datepicker.min.js" id="jquery-ui-datepicker-js">
@@ -842,7 +1088,7 @@
       var pm_ajax_object = {
         "ajax_url": "http:\/\/uruti.rw\/wp-admin\/admin-ajax.php",
         "plugin_emoji_url": "http:\/\/uruti.rw\/wp-content\/plugins\/profilegrid-user-profiles-groups-and-communities\/public\/partials\/images\/img",
-        "nonce": "5a62d9a1ec"
+        "nonce": "3b19475089"
       };
     </script>
     <script src="./js/profilegrid-user-profiles-groups-and-communities-public-js-profile-magic-footer.js"
@@ -853,7 +1099,7 @@
         "ajaxurl": "\/wp-admin\/admin-ajax.php"
       };
     </script>
-    <script src="./js/1pg-heartbeat.min.js" id="heartbeat-js">
+    <script src="./js/wyw-heartbeat.min.js" id="heartbeat-js">
     </script>
     <script src="./js/profilegrid-user-profiles-groups-and-communities-public-js-pg-password-checker.js"
     id="pg-password-checker.js-js">
@@ -912,6 +1158,9 @@
     <script src="./js/elementor-pro-assets-lib-smartmenus-jquery.smartmenus.min.js"
     id="smartmenus-js">
     </script>
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit&amp;ver=3.20.0"
+    id="elementor-recaptcha-api-js">
+    </script>
     <script src="./js/elementor-pro-assets-js-webpack-pro.runtime.min.js"
     id="elementor-pro-webpack-runtime-js">
     </script>
@@ -922,7 +1171,7 @@
     <script id="elementor-pro-frontend-js-before">
       var ElementorProFrontendConfig = {
         "ajaxurl": "http:\/\/uruti.rw\/wp-admin\/admin-ajax.php",
-        "nonce": "7b95723392",
+        "nonce": "8f10c7850e",
         "urls": {
           "assets": "http:\/\/uruti.rw\/wp-content\/plugins\/elementor-pro\/assets\/",
           "rest": "http:\/\/uruti.rw\/wp-json\/"
@@ -1123,7 +1372,7 @@
           "uploadUrl": "http:\/\/uruti.rw\/wp-content\/uploads"
         },
         "nonces": {
-          "floatingButtonsClickTracking": "711b00d2a5"
+          "floatingButtonsClickTracking": "929efd2d50"
         },
         "swiperClass": "swiper",
         "settings": {
@@ -1144,8 +1393,8 @@
           "hello_footer_logo_type": "logo"
         },
         "post": {
-          "id": 928,
-          "title": "Sign_in%20%E2%80%93%20Uruti",
+          "id": 298,
+          "title": "Registratio%20%E2%80%93%20Uruti",
           "excerpt": "",
           "featuredImage": false
         }

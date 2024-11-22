@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        /* Add CSS directly for simplicity */
+        body {
+            font-family: roboto;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9f4;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background: #e8f5e9;
+        }
+
+        .tab {
+            padding: 15px 20px;
+            cursor: pointer;
+            text-align: center;
+            width: 33%;
+            font-weight: bold;
+            color: #4caf50;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab.active {
+            border-bottom: 2px solid #4caf50;
+            color: #388e3c;
+        }
+
+        .form-content {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4caf50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #388e3c;
+        }
+
+        .g-recaptcha {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="showForm('entrepreneur')">Entrepreneur</div>
+            <div class="tab" onclick="showForm('investor')">Investor</div>
+            <div class="tab" onclick="showForm('mentor')">Mentor</div>
+        </div>
+
+        <!-- Entrepreneur Form -->
+        <div class="form-content" id="entrepreneur-form">
+            <form action="/submit_registration" method="POST">
+                <div class="form-group">
+                    <label for="full_name">Full Names *</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="Enter your first and last names" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Unique Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone_number">Phone Number *</label>
+                    <input type="text" id="phone_number" name="phone_number" placeholder="+250 7............" required>
+                </div>
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Profile *</label>
+                    <input type="url" id="linkedin" name="linkedin" placeholder="Link to your LinkedIn account">
+                </div>
+                <div class="form-group">
+                    <label for="business_name">Business Name *</label>
+                    <input type="text" id="business_name" name="business_name" placeholder="Your business name or project name" required>
+                </div>
+                <div class="form-group">
+                    <label for="business_type">Business Type *</label>
+                    <select id="business_type" name="business_type" required>
+                        <option value="Farming">Farming</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Manufacturing">Manufacturing</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="stage_of_business">Stage of Business *</label>
+                    <select id="stage_of_business" name="stage_of_business" required>
+                        <option value="Idea">Idea</option>
+                        <option value="Startup">Startup</option>
+                        <option value="Growth">Growth</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Do you need investment?</label>
+                    <label><input type="radio" name="needs_investment" value="Yes" required> Yes</label>
+                    <label><input type="radio" name="needs_investment" value="No" required> No</label>
+                </div>
+                <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Investor Form -->
+        <div class="form-content" id="investor-form" style="display: none;">
+            <form>
+                <!-- Similar fields as provided -->
+                <p>Investor-specific fields go here.</p>
+            </form>
+        </div>
+
+        <!-- Mentor Form -->
+        <div class="form-content" id="mentor-form" style="display: none;">
+            <form>
+                <!-- Similar fields as provided -->
+                <p>Mentor-specific fields go here.</p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showForm(tab) {
+            // Hide all forms
+            document.getElementById('entrepreneur-form').style.display = 'none';
+            document.getElementById('investor-form').style.display = 'none';
+            document.getElementById('mentor-form').style.display = 'none';
+
+            // Show selected form
+            document.getElementById(tab + '-form').style.display = 'block';
+
+            // Update active tab
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`.tab[onclick="showForm('${tab}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
