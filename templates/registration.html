@@ -280,57 +280,7 @@
    <script src="{{ url_for('static', filename='js/profilegrid-user-profiles-groups-and-communities-public-js-pg-profile-menu.js') }}"></script>
    <script src="{{ url_for('static', filename='js/profilegrid-user-profiles-groups-and-communities-public-js-profile-magic-public.js') }}"></script>
    
-    <script id="profilegrid-user-profiles-groups-and-communities-js-extra">
-      var pm_ajax_object = {
-        "ajax_url": "http:\/\/uruti.rw\/wp-admin\/admin-ajax.php",
-        "plugin_emoji_url": "http:\/\/uruti.rw\/wp-content\/plugins\/profilegrid-user-profiles-groups-and-communities\/public\/partials\/images\/img",
-        "nonce": "3b19475089"
-      };
-      var pm_error_object = {
-        "valid_email": "Please enter a valid e-mail address.",
-        "valid_number": "Please enter a valid number.",
-        "valid_date": "Please enter a valid date (yyyy-mm-dd format).",
-        "required_field": "This is a required field.",
-        "required_comman_field": "Please fill all the required fields.",
-        "file_type": "This file type is not allowed.",
-        "short_password": "Your password should be at least 7 characters long.",
-        "pass_not_match": "Password and confirm password do not match.",
-        "user_exist": "Sorry, username already exists.",
-        "email_exist": "Sorry, email already exists.",
-        "show_more": "More...",
-        "show_less": "Show less",
-        "user_not_exit": "Username does not exists.",
-        "password_change_successfully": "Password changed Successfully",
-        "allow_file_ext": "jpg|jpeg|png|gif",
-        "valid_phone_number": "Please enter a valid phone number.",
-        "valid_mobile_number": "Please enter a valid mobile number.",
-        "valid_facebook_url": "Please enter a valid Facebook url.",
-        "valid_twitter_url": "Please enter a Twitter url.",
-        "valid_google_url": "Please enter a valid Google url.",
-        "valid_linked_in_url": "Please enter a Linked In url.",
-        "valid_youtube_url": "Please enter a valid Youtube url.",
-        "valid_mixcloud_url": "Please enter a valid Mixcloud url.",
-        "valid_soundcloud_url": "Please enter a valid SoundCloud url.",
-        "valid_instagram_url": "Please enter a valid Instagram url.",
-        "crop_alert_error": "Please select a crop region then press submit.",
-        "admin_note_error": "Unable to add an empty note. Please write something and try again.",
-        "empty_message_error": "Unable to send an empty message. Please type something.",
-        "invite_limit_error": "Only ten users can be invited at a time.",
-        "no_more_result": "No More Result Found",
-        "delete_friend_request": "This will delete friend request from selected user(s). Do you wish to continue?",
-        "remove_friend": "This will remove selected user(s) from your friends list. Do you wish to continue?",
-        "accept_friend_request_conf": "This will accept request from selected user(s). Do you wish to continue?",
-        "cancel_friend_request": "This will cancel request from selected user(s). Do you wish to continue?",
-        "next": "Next",
-        "back": "Back",
-        "submit": "Submit",
-        "empty_chat_message": "I am sorry, I can't send an empty message. Please write something and try sending it again.",
-        "login_url": "http:\/\/uruti.rw\/login-2\/?password=changed"
-      };
-      var pm_fields_object = {
-        "dateformat": "yy-mm-dd"
-      };
-    </script>
+    
     <script src="./js/profilegrid-user-profiles-groups-and-communities-public-js-profile-magic-public.js"
     id="profilegrid-user-profiles-groups-and-communities-js">
     </script>
@@ -403,22 +353,22 @@
                     </a>
                   </li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21">
-                    <a href="http://uruti.rw/resources/" class="elementor-item">
+                    <a href="{{url_for('resources')}}" class="elementor-item">
                       Resources
                     </a>
                   </li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22">
-                    <a href="http://uruti.rw/about-us/" class="elementor-item">
+                    <a href="{{url_for('about')}}" class="elementor-item">
                       About Us
                     </a>
                   </li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23">
-                    <a href="http://uruti.rw/contact-us/" class="elementor-item">
+                    <a href="{{url_for('contact')}}" class="elementor-item">
                       Contact Us
                     </a>
                   </li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-298 current_page_item menu-item-347">
-                    <a href="./registration.html" aria-current="page" class="elementor-item elementor-item-active">
+                    <a href="{{url_for('registration')}}" aria-current="page" class="elementor-item elementor-item-active">
                       Registration
                     </a>
                   </li>
@@ -444,27 +394,27 @@
               aria-hidden="true">
                 <ul id="menu-2-eb66472" class="elementor-nav-menu">
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-20">
-                    <a href="http://uruti.rw/" class="elementor-item" tabindex="-1">
+                    <a href="{{url_for('home')}}" class="elementor-item" tabindex="-1">
                       Home
                     </a>
                   </li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21">
-                    <a href="http://uruti.rw/resources/" class="elementor-item" tabindex="-1">
+                    <a href="{{url_for('resources')}}" class="elementor-item" tabindex="-1">
                       Resources
                     </a>
                   </li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22">
-                    <a href="http://uruti.rw/about-us/" class="elementor-item" tabindex="-1">
+                    <a href="{{url_for('about')}}" class="elementor-item" tabindex="-1">
                       About Us
                     </a>
                   </li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23">
-                    <a href="http://uruti.rw/contact-us/" class="elementor-item" tabindex="-1">
+                    <a href="{{url_for('contact')}}" class="elementor-item" tabindex="-1">
                       Contact Us
                     </a>
                   </li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-298 current_page_item menu-item-347">
-                    <a href="./registration.html" aria-current="page" class="elementor-item elementor-item-active"
+                    <a href="{{url_for('registration')}}" aria-current="page" class="elementor-item elementor-item-active"
                     tabindex="-1">
                       Registration
                     </a>
@@ -477,7 +427,7 @@
           data-id="6338bab" data-element_type="widget" data-widget_type="button.default">
             <div class="elementor-widget-container">
               <div class="elementor-button-wrapper">
-                <a class="elementor-button elementor-button-link elementor-size-sm" href="http://uruti.rw/login/">
+                <a class="elementor-button elementor-button-link elementor-size-sm" href="{{url_for('login')}}">
                   <span class="elementor-button-content-wrapper">
                     <span class="elementor-button-text">
                       Sign in
@@ -850,27 +800,27 @@
                 <nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                   <ul id="menu-1-dfbf79d" class="elementor-nav-menu sm-vertical">
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-20">
-                      <a href="http://uruti.rw/" class="elementor-item">
+                      <a href="{{url_for('home')}}" class="elementor-item">
                         Home
                       </a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21">
-                      <a href="http://uruti.rw/resources/" class="elementor-item">
+                      <a href="{{url_for('resources')}}" class="elementor-item">
                         Resources
                       </a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22">
-                      <a href="http://uruti.rw/about-us/" class="elementor-item">
+                      <a href="{{url_for('about')}}" class="elementor-item">
                         About Us
                       </a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23">
-                      <a href="http://uruti.rw/contact-us/" class="elementor-item">
+                      <a href="{{url_for('contact')}}" class="elementor-item">
                         Contact Us
                       </a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-298 current_page_item menu-item-347">
-                      <a href="./registration.html" aria-current="page" class="elementor-item elementor-item-active">
+                      <a href="{{url_for('registration')}}" aria-current="page" class="elementor-item elementor-item-active">
                         Registration
                       </a>
                     </li>
@@ -880,27 +830,27 @@
                 aria-hidden="true">
                   <ul id="menu-2-dfbf79d" class="elementor-nav-menu sm-vertical">
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-20">
-                      <a href="http://uruti.rw/" class="elementor-item" tabindex="-1">
+                      <a href="{{url_for('home')}}/" class="elementor-item" tabindex="-1">
                         Home
                       </a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21">
-                      <a href="http://uruti.rw/resources/" class="elementor-item" tabindex="-1">
+                      <a href="{{url_for('resources')}}" class="elementor-item" tabindex="-1">
                         Resources
                       </a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22">
-                      <a href="http://uruti.rw/about-us/" class="elementor-item" tabindex="-1">
+                      <a href="{{url_for('about')}}" class="elementor-item" tabindex="-1">
                         About Us
                       </a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23">
-                      <a href="http://uruti.rw/contact-us/" class="elementor-item" tabindex="-1">
+                      <a href="{{url_for('contact')}}" class="elementor-item" tabindex="-1">
                         Contact Us
                       </a>
                     </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-298 current_page_item menu-item-347">
-                      <a href="./registration.html" aria-current="page" class="elementor-item elementor-item-active"
+                      <a href="{{url_for('registration')}}" aria-current="page" class="elementor-item elementor-item-active"
                       tabindex="-1">
                         Registration
                       </a>
@@ -1026,9 +976,9 @@
     </script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/elementor-assets-css-widget-image.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/elementor-assets-css-widget-text-editor.min.css') }}">
-    <script src="./js/jquery-ui-core.min.js" id="jquery-ui-core-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-core.min.js') }}" id="jquery-ui-core-js">
     </script>
-    <script src="./js/jquery-ui-datepicker.min.js" id="jquery-ui-datepicker-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-datepicker.min.js') }}" id="jquery-ui-datepicker-js">
     </script>
     <script id="jquery-ui-datepicker-js-after">
       jQuery(function(jQuery) {
@@ -1048,38 +998,38 @@
         });
       });
     </script>
-    <script src="./js/jquery-ui-accordion.min.js" id="jquery-ui-accordion-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-accordion.min.js') }}" id="jquery-ui-accordion-js">
     </script>
-    <script src="./js/jquery-ui-mouse.min.js" id="jquery-ui-mouse-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-mouse.min.js') }}" id="jquery-ui-mouse-js">
     </script>
-    <script src="./js/jquery-ui-resizable.min.js" id="jquery-ui-resizable-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-resizable.min.js') }}" id="jquery-ui-resizable-js">
     </script>
-    <script src="./js/jquery-ui-draggable.min.js" id="jquery-ui-draggable-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-draggable.min.js') }}" id="jquery-ui-draggable-js">
     </script>
-    <script src="./js/jquery-ui-controlgroup.min.js" id="jquery-ui-controlgroup-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-controlgroup.min.js') }}" id="jquery-ui-controlgroup-js">
     </script>
-    <script src="./js/jquery-ui-checkboxradio.min.js" id="jquery-ui-checkboxradio-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-checkboxradio.min.js') }}" id="jquery-ui-checkboxradio-js">
     </script>
-    <script src="./js/jquery-ui-button.min.js" id="jquery-ui-button-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-button.min.js') }}" id="jquery-ui-button-js">
     </script>
-    <script src="./js/jquery-ui-dialog.min.js" id="jquery-ui-dialog-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-dialog.min.js') }}" id="jquery-ui-dialog-js">
     </script>
-    <script src="./js/jquery-ui-menu.min.js" id="jquery-ui-menu-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-menu.min.js') }}" id="jquery-ui-menu-js">
     </script>
-    <script src="./js/dist-dom-ready.min.js" id="wp-dom-ready-js">
+    <script src="{{ url_for('static', filename='js/dist-dom-ready.min.js') }}" id="wp-dom-ready-js">
     </script>
-    <script src="./js/dist-hooks.min.js" id="wp-hooks-js">
+    <script src="{{ url_for('static', filename='js/dist-hooks.min.js') }}" id="wp-hooks-js">
     </script>
-    <script src="./js/dist-i18n.min.js" id="wp-i18n-js">
+    <script src="{{ url_for('static', filename='js/dist-i18n.min.js') }}" id="wp-i18n-js">
     </script>
     <script id="wp-i18n-js-after">
       wp.i18n.setLocaleData({
         'text direction\u0004ltr': ['ltr']
       });
     </script>
-    <script src="./js/dist-a11y.min.js" id="wp-a11y-js">
+    <script src="{{ url_for('static', filename='js/dist-a11y.min.js') }}" id="wp-a11y-js">
     </script>
-    <script src="./js/jquery-ui-autocomplete.min.js" id="jquery-ui-autocomplete-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-autocomplete.min.js') }}" id="jquery-ui-autocomplete-js">
     </script>
     <script id="profile-magic-footer.js-js-extra">
       var show_rm_sumbmission_tab = {
@@ -1091,82 +1041,28 @@
         "nonce": "3b19475089"
       };
     </script>
-    <script src="./js/profilegrid-user-profiles-groups-and-communities-public-js-profile-magic-footer.js"
-    id="profile-magic-footer.js-js">
-    </script>
     <script id="heartbeat-js-extra">
       var heartbeatSettings = {
         "ajaxurl": "\/wp-admin\/admin-ajax.php"
       };
     </script>
-    <script src="./js/wyw-heartbeat.min.js" id="heartbeat-js">
+    <script src="{{ url_for('static', filename='js/wyw-heartbeat.min.js') }}" id="heartbeat-js">
     </script>
-    <script src="./js/profilegrid-user-profiles-groups-and-communities-public-js-pg-password-checker.js"
-    id="pg-password-checker.js-js">
     </script>
-    <script id="profile-magic-admin-power.js-js-extra">
-      var pm_error_object = {
-        "valid_email": "Please enter a valid e-mail address.",
-        "valid_number": "Please enter a valid number.",
-        "valid_date": "Please enter a valid date (yyyy-mm-dd format).",
-        "required_field": "This is a required field.",
-        "required_comman_field": "Please fill all the required fields.",
-        "file_type": "This file type is not allowed.",
-        "short_password": "Your password should be at least 7 characters long.",
-        "pass_not_match": "Password and confirm password do not match.",
-        "user_exist": "Sorry, username already exists.",
-        "email_exist": "Sorry, email already exists.",
-        "show_more": "More...",
-        "show_less": "Show less",
-        "user_not_exit": "Username does not exists.",
-        "password_change_successfully": "Password changed Successfully",
-        "allow_file_ext": "jpg|jpeg|png|gif",
-        "valid_phone_number": "Please enter a valid phone number.",
-        "valid_mobile_number": "Please enter a valid mobile number.",
-        "valid_facebook_url": "Please enter a valid Facebook url.",
-        "valid_twitter_url": "Please enter a Twitter url.",
-        "valid_google_url": "Please enter a valid Google url.",
-        "valid_linked_in_url": "Please enter a Linked In url.",
-        "valid_youtube_url": "Please enter a valid Youtube url.",
-        "valid_mixcloud_url": "Please enter a valid Mixcloud url.",
-        "valid_soundcloud_url": "Please enter a valid SoundCloud url.",
-        "valid_instagram_url": "Please enter a valid Instagram url.",
-        "crop_alert_error": "Please select a crop region then press submit.",
-        "admin_note_error": "Unable to add an empty note. Please write something and try again.",
-        "empty_message_error": "Unable to send an empty message. Please type something.",
-        "invite_limit_error": "Only ten users can be invited at a time.",
-        "no_more_result": "No More Result Found",
-        "delete_friend_request": "This will delete friend request from selected user(s). Do you wish to continue?",
-        "remove_friend": "This will remove selected user(s) from your friends list. Do you wish to continue?",
-        "accept_friend_request_conf": "This will accept request from selected user(s). Do you wish to continue?",
-        "cancel_friend_request": "This will cancel request from selected user(s). Do you wish to continue?",
-        "next": "Next",
-        "back": "Back",
-        "submit": "Submit",
-        "empty_chat_message": "I am sorry, I can't send an empty message. Please write something and try sending it again.",
-        "login_url": "http:\/\/uruti.rw\/login-2\/?password=changed"
-      };
-      var pm_fields_object = {
-        "dateformat": "yy-mm-dd"
-      };
+    <script src="{{ url_for('static', filename='js/hello-elementor-assets-js-hello-frontend.min.js') }}" id="hello-theme-frontend-js">
     </script>
-    <script src="./js/profilegrid-user-profiles-groups-and-communities-public-js-profile-magic-admin-power.js"
-    id="profile-magic-admin-power.js-js">
-    </script>
-    <script src="./js/hello-elementor-assets-js-hello-frontend.min.js" id="hello-theme-frontend-js">
-    </script>
-    <script src="./js/elementor-pro-assets-lib-smartmenus-jquery.smartmenus.min.js"
+    <script src="{{ url_for('static', filename='js/elementor-pro-assets-lib-smartmenus-jquery.smartmenus.min.js') }}"
     id="smartmenus-js">
     </script>
     <script src="https://www.google.com/recaptcha/api.js?render=explicit&amp;ver=3.20.0"
     id="elementor-recaptcha-api-js">
     </script>
-    <script src="./js/elementor-pro-assets-js-webpack-pro.runtime.min.js"
+    <script src="{{ url_for('static', filename='js/elementor-pro-assets-js-webpack-pro.runtime.min.js') }}"
     id="elementor-pro-webpack-runtime-js">
     </script>
-    <script src="./js/elementor-assets-js-webpack.runtime.min.js" id="elementor-webpack-runtime-js">
+    <script src="{{ url_for('static', filename='js/elementor-assets-js-webpack.runtime.min.js') }}" id="elementor-webpack-runtime-js">
     </script>
-    <script src="./js/elementor-assets-js-frontend-modules.min.js" id="elementor-frontend-modules-js">
+    <script src="{{ url_for('static', filename='js/elementor-assets-js-frontend-modules.min.js') }}" id="elementor-frontend-modules-js">
     </script>
     <script id="elementor-pro-frontend-js-before">
       var ElementorProFrontendConfig = {
@@ -1256,7 +1152,7 @@
         }
       };
     </script>
-    <script src="./js/elementor-pro-assets-js-frontend.min.js" id="elementor-pro-frontend-js">
+    <script src="{{ url_for('static', filename='js/elementor-pro-assets-js-frontend.min.js') }}" id="elementor-pro-frontend-js">
     </script>
     <script id="elementor-frontend-js-before">
       var elementorFrontendConfig = {
@@ -1400,9 +1296,9 @@
         }
       };
     </script>
-    <script src="./js/elementor-assets-js-frontend.min.js" id="elementor-frontend-js">
+    <script src="{{ url_for('static', filename='js/elementor-assets-js-frontend.min.js') }}" id="elementor-frontend-js">
     </script>
-    <script src="./js/elementor-pro-assets-js-preloaded-elements-handlers.min.js"
+    <script src="{{ url_for('static', filename='js/elementor-pro-assets-js-preloaded-elements-handlers.min.js') }}"
     id="pro-preloaded-elements-handlers-js">
     </script>
   </body>
