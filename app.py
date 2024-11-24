@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for, render_template, flash, send_from_directory
+from flask import Flask, request, redirect, url_for, render_template, flash, send_from_directory, session
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
@@ -30,7 +30,6 @@ class User(db.Model):
         'polymorphic_on': role
     }
 
-
 class Investor(User):
     __tablename__ = 'investors'
     id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
@@ -42,17 +41,16 @@ class Investor(User):
         'polymorphic_identity': 'investor',
     }
 
-# Mentor Class (inherits from User)
 class Mentor(User):
     __tablename__ = 'mentors'
     id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
     area_of_expertise = db.Column(db.String(50))
     years_of_experience = db.Column(db.Integer)
+
     __mapper_args__ = {
         'polymorphic_identity': 'mentor',
     }
 
-# Entrepreneur Class (inherits from User)
 class Entrepreneur(User):
     __tablename__ = 'entrepreneurs'
     id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
@@ -65,90 +63,80 @@ class Entrepreneur(User):
         'polymorphic_identity': 'entrepreneur',
     }
 
-# Investor Class (inherits from User)
-
-
-# Serve CSS, JS, Images, and Fonts from the templates directory (css, fonts, images, js)
+# Serve CSS, JS, Images, and Fonts from the templates directory
 @app.route('/<path:folder>/<path:filename>')
 def custom_static(folder, filename):
-    valid_folders = ['css', 'js', 'images', 'fonts']  # Add other asset folders if needed
+    valid_folders = ['css', 'js', 'images', 'fonts']
     if folder in valid_folders:
         return send_from_directory(os.path.join('templates', folder), filename)
     else:
-        return "Invalid folder", 404
+        # Return 404 for invalid folder requests
+        return render_template('404.html'), 404
 
 # Route to render the homepage
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# Route to render the Resources page
 @app.route('/resources')
 def resources():
-    return render_template('resources.html')  # Ensure you have a resources.html file in the templates folder
+    return render_template('resources.html')
 
-# Route to render the About Us page
 @app.route('/about')
 def about():
-    return render_template('about-us.html')  # Ensure you have a about.html file in the templates folder
+    return render_template('about-us.html')
 
-# Route to render the Contact Us page
 @app.route('/contact')
 def contact():
-    return render_template('contact-us.html')  # Ensure you have a contact.html file in the templates folder
+    return render_template('contact-us.html')
 
-# Route to render the Registration page
 @app.route('/registration')
 def registration():
-    return render_template('registration.html')  # Ensure you have a registration.html file in the templates folder
+    return render_template('registration.html')
 
 # Route to handle user registration
 @app.route('/register/<role>', methods=['POST'])
 def register(role):
     try:
-        # Common fields for all roles
         full_name = request.form.get('full_name')
         email = request.form.get('email')
         password = bcrypt.generate_password_hash(request.form.get('password')).decode('utf-8')
         phone_number = request.form.get('phone_number')
         linkedin_url = request.form.get('linkedin_url')
 
-        # Role-specific logic
         if role == "mentor":
-            area_of_expertise = request.form.get('area_of_expertise')
             new_user = Mentor(
                 full_name=full_name,
                 email=email,
                 password=password,
                 phone_number=phone_number,
                 linkedin_url=linkedin_url,
-                area_of_expertise=area_of_expertise,
-                years_of_experience = request.form.get('years_of_experience', 0),
+                area_of_expertise=request.form.get('area_of_expertise'),
+                years_of_experience=int(request.form.get('years_of_experience', 0)),
                 role="mentor"
             )
         elif role == "entrepreneur":
-            
             new_user = Entrepreneur(
                 full_name=full_name,
                 email=email,
                 password=password,
                 phone_number=phone_number,
                 linkedin_url=linkedin_url,
-                years_of_experience=int(years_of_experience),
+                years_of_experience=int(request.form.get('years_of_experience', 0)),
                 businessname=request.form.get('business_name'),
                 business_type=request.form.get('business_type'),
                 business_stage=request.form.get('stage'),
                 role="entrepreneur"
             )
         elif role == "investor":
-            investment_interest = request.form.get('investment_interest')
             new_user = Investor(
-                businessname=request.form.get('business_name'),
+                full_name=full_name,
                 email=email,
                 password=password,
                 phone_number=phone_number,
                 linkedin_url=linkedin_url,
-                investment_interest=investment_interest,
+                businessname=request.form.get('business_name'),
+                investment_interest=request.form.get('investment_interest'),
                 business_website=request.form.get('business_website'),
                 role="investor"
             )
@@ -156,11 +144,9 @@ def register(role):
             flash("Invalid role provided.")
             return redirect(url_for('registration'))
 
-        # Save to database
         db.session.add(new_user)
         db.session.commit()
 
-        # Redirect to role-specific dashboard
         return redirect(url_for(f'{role}_dashboard'))
 
     except IntegrityError:
@@ -169,40 +155,36 @@ def register(role):
         return redirect(url_for('registration'))
     except Exception as e:
         flash(f"An error occurred: {str(e)}")
-        return redirect(url_for('registration'))
+        return redirect(url_for(f'{role}_dashboard'))
 
 # Dashboards for each role
 @app.route('/dashboard/mentor')
 def mentor_dashboard():
+    user_name = session['user_name']
     return render_template('mentor_dashboard.html')
 
 @app.route('/dashboard/entrepreneur')
 def entrepreneur_dashboard():
+    user_name = session['user_name']
     return render_template('ent_dashboard.html')
 
 @app.route('/dashboard/investor')
 def investor_dashboard():
+    user_name = session['user_name']
     return render_template('inv_dashboard.html')
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # Retrieve form data
-        email = request.form.get('log')  # From the "log" input field
-        password = request.form.get('pwd')  # From the "pwd" input field
-
-        # Query the user by email
+        email = request.form.get('log')
+        password = request.form.get('pwd')
         user = User.query.filter_by(email=email).first()
 
-        # Verify user existence and password
         if user and bcrypt.check_password_hash(user.password, password):
-            # Store user details in session
             session['user_id'] = user.id
             session['user_role'] = user.role
-            session['user_name'] = user.full_name
+            session['user_name'] = user.full_name  # Set the full_name here
 
-            # Redirect based on user role
             if user.role == 'mentor':
                 return redirect(url_for('mentor_dashboard'))
             elif user.role == 'entrepreneur':
@@ -213,23 +195,18 @@ def login():
                 flash("Invalid user role.")
                 return redirect(url_for('login'))
 
-        # Invalid login attempt
-        flash("Invalid email or password. Please try again.")
+        flash("Invalid email or password.")
         return redirect(url_for('login'))
 
-    return render_template('sign_in.html')  # Render login page for GET requests
-
+    return render_template('sign_in.html')
 @app.route('/logout')
 def logout():
     session.clear()
     flash("You have been logged out.")
     return redirect(url_for('login'))
 
-# Initialize the database
-
 def setup():
     db.create_all()
 
-# Run the app
 if __name__ == '__main__':
     app.run(debug=True)

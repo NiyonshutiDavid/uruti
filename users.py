@@ -4,15 +4,15 @@ import sqlite3
 conn = sqlite3.connect('uruti.db')
 cursor = conn.cursor()
 
-# Query to retrieve all table names
-cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+# Query to retrieve all users from the users table
+cursor.execute("SELECT * FROM entrepreneurs")
 
 # Fetch all results
-tables = cursor.fetchall()
+entrepreneurs = cursor.fetchall()
 
-# Display each table name
-for table in tables:
-    print(table[0])
+# Display each user
+for user in entrepreneurs:
+    print(user)
 
 # Close the connection
 conn.close()
