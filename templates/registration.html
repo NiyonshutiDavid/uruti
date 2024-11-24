@@ -561,10 +561,22 @@
             </div>
     
             <!-- Investor Form -->
-            <div class="form-content" id="investor-form" style="display: none;">
-                <form>
-                    <!-- Similar fields as provided -->
-                    <p>Investor-specific fields go here.</p>
+            <div class="form-content" id="investor-form">
+              <form action="/register/investor" method="POST">
+                  {% for column in investor_columns %}
+                  <div class="form-group">
+                      <label for="{{ column }}">{{ column | capitalize }} *</label>
+                      {% if column == "email" %}
+                      <input type="email" id="{{ column }}" name="{{ column }}" placeholder="Enter your {{ column }}" required>
+                      {% elif column == "password" %}
+                      <input type="password" id="{{ column }}" name="{{ column }}" placeholder="Enter Unique {{ column }}" required>
+                      {% else %}
+                      <input type="{{ column | input_type }}" id="{{ column }}" name="{{ column }}" placeholder="Enter your {{ column }}" required>
+                      {% endif %}
+                  </div>
+                  {% endfor %}
+                    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                    <button type="submitting" style="border-color: #00d084; border-radius: 5px; font-color:var(--wp--preset--color--light-green-cyan)">Submit</button>
                 </form>
             </div>
     
