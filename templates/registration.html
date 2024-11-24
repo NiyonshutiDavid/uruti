@@ -263,18 +263,6 @@
     media="all" />
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
-    <script>
-      /* <![CDATA[ */
-      var rcewpp = {
-        "ajax_url": "http://uruti.rw/wp-admin/admin-ajax.php",
-        "nonce": "c880a022a9",
-        "home_url": "http://uruti.rw/",
-        "settings_icon": 'http://uruti.rw/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
-        "settings_hover_icon": 'http://uruti.rw/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
-      };
-      /* ]]\> */
-      
-    </script>
    <script src="{{ url_for('static', filename='js/jquery-jquery.min.js') }}"></script>
    <script src="{{ url_for('static', filename='js/jquery-jquery-migrate.min.js') }}"></script>
    <script src="{{ url_for('static', filename='js/profilegrid-user-profiles-groups-and-communities-public-js-pg-profile-menu.js') }}"></script>
@@ -543,7 +531,11 @@
 										   placeholder="Your business name or project name" 
 										   required="required" aria-required="true">
 								  </div>
-							  
+                  <!--Business description-->
+                  <div class="elementor-field-group elementor-column elementor-field-required">
+									<label for="business-description" class="elementor-field-label">Business Description</label>
+									<textarea name="business_description" id="business-description" class="elementor-field elementor-size-sm" rows="4" placeholder="Describe your business, mission, or vision" required></textarea>
+								  </div>
 								  <!-- Business Type -->
 								  <div class="elementor-field-group elementor-field-required">
 									<label for="business_type" class="elementor-field-label">Business Type</label>
@@ -665,10 +657,7 @@
 									</select>
 								  </div>
 							  
-								  <div class="elementor-field-group elementor-column elementor-field-required">
-									<label for="business-description" class="elementor-field-label">Business Description</label>
-									<textarea name="business_description" id="business-description" class="elementor-field elementor-size-sm" rows="4" placeholder="Describe your business, mission, or vision" required></textarea>
-								  </div>
+								  
 							  
 								  <div class="elementor-field-group elementor-column">
 									<label for="business-website" class="elementor-field-label">Business Website</label>
@@ -1031,21 +1020,6 @@
     </script>
     <script src="{{ url_for('static', filename='js/jquery-ui-autocomplete.min.js') }}" id="jquery-ui-autocomplete-js">
     </script>
-    <script id="profile-magic-footer.js-js-extra">
-      var show_rm_sumbmission_tab = {
-        "registration_tab": "0"
-      };
-      var pm_ajax_object = {
-        "ajax_url": "http:\/\/uruti.rw\/wp-admin\/admin-ajax.php",
-        "plugin_emoji_url": "http:\/\/uruti.rw\/wp-content\/plugins\/profilegrid-user-profiles-groups-and-communities\/public\/partials\/images\/img",
-        "nonce": "3b19475089"
-      };
-    </script>
-    <script id="heartbeat-js-extra">
-      var heartbeatSettings = {
-        "ajaxurl": "\/wp-admin\/admin-ajax.php"
-      };
-    </script>
     <script src="{{ url_for('static', filename='js/wyw-heartbeat.min.js') }}" id="heartbeat-js">
     </script>
     </script>
@@ -1063,94 +1037,6 @@
     <script src="{{ url_for('static', filename='js/elementor-assets-js-webpack.runtime.min.js') }}" id="elementor-webpack-runtime-js">
     </script>
     <script src="{{ url_for('static', filename='js/elementor-assets-js-frontend-modules.min.js') }}" id="elementor-frontend-modules-js">
-    </script>
-    <script id="elementor-pro-frontend-js-before">
-      var ElementorProFrontendConfig = {
-        "ajaxurl": "http:\/\/uruti.rw\/wp-admin\/admin-ajax.php",
-        "nonce": "8f10c7850e",
-        "urls": {
-          "assets": "http:\/\/uruti.rw\/wp-content\/plugins\/elementor-pro\/assets\/",
-          "rest": "http:\/\/uruti.rw\/wp-json\/"
-        },
-        "shareButtonsNetworks": {
-          "facebook": {
-            "title": "Facebook",
-            "has_counter": true
-          },
-          "twitter": {
-            "title": "Twitter"
-          },
-          "linkedin": {
-            "title": "LinkedIn",
-            "has_counter": true
-          },
-          "pinterest": {
-            "title": "Pinterest",
-            "has_counter": true
-          },
-          "reddit": {
-            "title": "Reddit",
-            "has_counter": true
-          },
-          "vk": {
-            "title": "VK",
-            "has_counter": true
-          },
-          "odnoklassniki": {
-            "title": "OK",
-            "has_counter": true
-          },
-          "tumblr": {
-            "title": "Tumblr"
-          },
-          "digg": {
-            "title": "Digg"
-          },
-          "skype": {
-            "title": "Skype"
-          },
-          "stumbleupon": {
-            "title": "StumbleUpon",
-            "has_counter": true
-          },
-          "mix": {
-            "title": "Mix"
-          },
-          "telegram": {
-            "title": "Telegram"
-          },
-          "pocket": {
-            "title": "Pocket",
-            "has_counter": true
-          },
-          "xing": {
-            "title": "XING",
-            "has_counter": true
-          },
-          "whatsapp": {
-            "title": "WhatsApp"
-          },
-          "email": {
-            "title": "Email"
-          },
-          "print": {
-            "title": "Print"
-          },
-          "x-twitter": {
-            "title": "X"
-          },
-          "threads": {
-            "title": "Threads"
-          }
-        },
-        "facebook_sdk": {
-          "lang": "en_US",
-          "app_id": ""
-        },
-        "lottie": {
-          "defaultAnimationUrl": "http:\/\/uruti.rw\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"
-        }
-      };
     </script>
     <script src="{{ url_for('static', filename='js/elementor-pro-assets-js-frontend.min.js') }}" id="elementor-pro-frontend-js">
     </script>
@@ -1262,10 +1148,7 @@
           "form-submissions": true,
           "taxonomy-filter": true
         },
-        "urls": {
-          "assets": "http:\/\/uruti.rw\/wp-content\/plugins\/elementor\/assets\/",
-          "ajaxurl": "http:\/\/uruti.rw\/wp-admin\/admin-ajax.php",
-          "uploadUrl": "http:\/\/uruti.rw\/wp-content\/uploads"
+  
         },
         "nonces": {
           "floatingButtonsClickTracking": "929efd2d50"

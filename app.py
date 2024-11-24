@@ -30,12 +30,24 @@ class User(db.Model):
         'polymorphic_on': role
     }
 
+
+class Investor(User):
+    __tablename__ = 'investors'
+    id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
+    businessname = db.Column(db.String(100))
+    investment_interest = db.Column(db.String(100))
+    business_website = db.Column(db.String(255))
+
+    __mapper_args__ = {
+        'polymorphic_identity': 'investor',
+    }
+
 # Mentor Class (inherits from User)
 class Mentor(User):
     __tablename__ = 'mentors'
     id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
     area_of_expertise = db.Column(db.String(50))
-
+    years_of_experience = db.Column(db.Integer)
     __mapper_args__ = {
         'polymorphic_identity': 'mentor',
     }
@@ -45,20 +57,16 @@ class Entrepreneur(User):
     __tablename__ = 'entrepreneurs'
     id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
     years_of_experience = db.Column(db.Integer)
+    businessname = db.Column(db.String(100))
+    business_type = db.Column(db.String(100))
+    business_stage = db.Column(db.String(100))
 
     __mapper_args__ = {
         'polymorphic_identity': 'entrepreneur',
     }
 
 # Investor Class (inherits from User)
-class Investor(User):
-    __tablename__ = 'investors'
-    id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
-    investment_interest = db.Column(db.String(100))
 
-    __mapper_args__ = {
-        'polymorphic_identity': 'investor',
-    }
 
 # Serve CSS, JS, Images, and Fonts from the templates directory (css, fonts, images, js)
 @app.route('/<path:folder>/<path:filename>')
@@ -115,10 +123,11 @@ def register(role):
                 phone_number=phone_number,
                 linkedin_url=linkedin_url,
                 area_of_expertise=area_of_expertise,
+                years_of_experience = request.form.get('years_of_experience', 0),
                 role="mentor"
             )
         elif role == "entrepreneur":
-            years_of_experience = request.form.get('years_of_experience', 0)
+            
             new_user = Entrepreneur(
                 full_name=full_name,
                 email=email,
@@ -126,17 +135,21 @@ def register(role):
                 phone_number=phone_number,
                 linkedin_url=linkedin_url,
                 years_of_experience=int(years_of_experience),
+                businessname=request.form.get('business_name'),
+                business_type=request.form.get('business_type'),
+                business_stage=request.form.get('stage'),
                 role="entrepreneur"
             )
         elif role == "investor":
             investment_interest = request.form.get('investment_interest')
             new_user = Investor(
-                full_name=full_name,
+                businessname=request.form.get('business_name'),
                 email=email,
                 password=password,
                 phone_number=phone_number,
                 linkedin_url=linkedin_url,
                 investment_interest=investment_interest,
+                business_website=request.form.get('business_website'),
                 role="investor"
             )
         else:
@@ -171,9 +184,46 @@ def entrepreneur_dashboard():
 def investor_dashboard():
     return render_template('inv_dashboard.html')
 
-@app.route('/login')
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('sign_in.html')
+    if request.method == 'POST':
+        # Retrieve form data
+        email = request.form.get('log')  # From the "log" input field
+        password = request.form.get('pwd')  # From the "pwd" input field
+
+        # Query the user by email
+        user = User.query.filter_by(email=email).first()
+
+        # Verify user existence and password
+        if user and bcrypt.check_password_hash(user.password, password):
+            # Store user details in session
+            session['user_id'] = user.id
+            session['user_role'] = user.role
+            session['user_name'] = user.full_name
+
+            # Redirect based on user role
+            if user.role == 'mentor':
+                return redirect(url_for('mentor_dashboard'))
+            elif user.role == 'entrepreneur':
+                return redirect(url_for('entrepreneur_dashboard'))
+            elif user.role == 'investor':
+                return redirect(url_for('investor_dashboard'))
+            else:
+                flash("Invalid user role.")
+                return redirect(url_for('login'))
+
+        # Invalid login attempt
+        flash("Invalid email or password. Please try again.")
+        return redirect(url_for('login'))
+
+    return render_template('sign_in.html')  # Render login page for GET requests
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash("You have been logged out.")
+    return redirect(url_for('login'))
 
 # Initialize the database
 
