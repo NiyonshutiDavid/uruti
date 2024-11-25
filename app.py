@@ -130,7 +130,6 @@ def register(role):
             )
         elif role == "investor":
             new_user = Investor(
-                full_name=full_name,
                 email=email,
                 password=password,
                 phone_number=phone_number,
@@ -160,17 +159,14 @@ def register(role):
 # Dashboards for each role
 @app.route('/dashboard/mentor')
 def mentor_dashboard():
-    user_name = session['user_name']
     return render_template('mentor_dashboard.html')
 
 @app.route('/dashboard/entrepreneur')
 def entrepreneur_dashboard():
-    user_name = session['user_name']
     return render_template('ent_dashboard.html')
 
 @app.route('/dashboard/investor')
 def investor_dashboard():
-    user_name = session['user_name']
     return render_template('inv_dashboard.html')
 
 @app.route('/login', methods=['GET', 'POST'])

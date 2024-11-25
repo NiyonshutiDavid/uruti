@@ -68,7 +68,7 @@ Before setting up the project, ensure you have the following installed:
 
 6. Run the development server:  
    ```bash  
-   flask run  
+   python3 app.py  
    ```  
 
 7. Access the platform at `http://127.0.0.1:5000`.  
@@ -107,4 +107,4 @@ Contributions are welcome! To contribute:
 This project is licensed under the MIT License. See the LICENSE file for more details.  
 
 ## Contact  
-For any inquiries, feel free to reach out to us at [uruti.support@example.com](mailto:uruti.support@example.com).  
+For any inquiries, feel free to reach out to us on Linkedin at `https://www.linkedin.com/company/uruti/`.  

@@ -563,29 +563,87 @@
             <!-- Investor Form -->
             <div class="form-content" id="investor-form">
               <form action="/register/investor" method="POST">
-                  {% for column in investor_columns %}
-                  <div class="form-group">
-                      <label for="{{ column }}">{{ column | capitalize }} *</label>
-                      {% if column == "email" %}
-                      <input type="email" id="{{ column }}" name="{{ column }}" placeholder="Enter your {{ column }}" required>
-                      {% elif column == "password" %}
-                      <input type="password" id="{{ column }}" name="{{ column }}" placeholder="Enter Unique {{ column }}" required>
-                      {% else %}
-                      <input type="{{ column | input_type }}" id="{{ column }}" name="{{ column }}" placeholder="Enter your {{ column }}" required>
-                      {% endif %}
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your email" required>
+                    <label for="">Password *</label>
+                      <input type="password" id="password" name="password" placeholder="Enter Unique Password" required>
                   </div>
-                  {% endfor %}
-                    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-                    <button type="submitting" style="border-color: #00d084; border-radius: 5px; font-color:var(--wp--preset--color--light-green-cyan)">Submit</button>
-                </form>
+                  <div class="form-group">
+                      <label for="phone_number">Phone Number *</label>
+                      <input type="text" id="phone_number" name="phone_number" placeholder="+250 7............" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="linkedin">LinkedIn Profile *</label>
+                      <input type="url" id="linkedin" name="linkedin" placeholder="Link to your LinkedIn account">
+                  </div>
+                  <div class="form-group">
+                    <label for="business_website">Business website </label>
+                    <input type="url" id="business_website" name="business_website" placeholder="Link to the website">
+                  </div>
+                  <div class="form-group">
+                      <label for="business_name">Business Name *</label>
+                      <input type="text" id="business_name" name="business_name" placeholder="Your business name or project name" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="business_type">Investment interest *</label>
+                      <select id="business_type" name="business_type" required>
+                          <option value="Farming">Farming</option>
+                          <option value="Technology">Technology</option>
+                          <option value="Manufacturing">Manufacturing</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="stage_of_business">Stage of Business *</label>
+                      <select id="stage_of_business" name="stage_of_business" required>
+                          <option value="Idea">Idea</option>
+                          <option value="Startup">Startup</option>
+                          <option value="Growth">Growth</option>
+                      </select>
+                  </div>
+                  <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                  <button type="submitting" style="border-color: #00d084; border-radius: 5px; font-color:var(--wp--preset--color--light-green-cyan)">Submit</button>
+              </form>
             </div>
     
             <!-- Mentor Form -->
-            <div class="form-content" id="mentor-form" style="display: none;">
-                <form>
-                    <!-- Similar fields as provided -->
-                    <p>Mentor-specific fields go here.</p>
-                </form>
+            <div class="form-content" id="mentor-form">
+              <form action="/register/mentor" method="POST">
+                <div class="form-group">
+                  <label for="full_name">Full Names *</label>
+                  <input type="text" id="full_name" name="full_name" placeholder="Enter your first and last names" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your email" required>
+                    <label for="">Password *</label>
+                      <input type="password" id="password" name="password" placeholder="Enter Unique Password" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="phone_number">Phone Number *</label>
+                      <input type="text" id="phone_number" name="phone_number" placeholder="+250 7............" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="linkedin">LinkedIn Profile *</label>
+                      <input type="url" id="linkedin" name="linkedin" placeholder="Link to your LinkedIn account">
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                      <label for="business_type">Area of expertise *</label>
+                      <select id="business_type" name="business_type" required>
+                          <option value="Farming">Farming</option>
+                          <option value="Technology">Technology</option>
+                          <option value="Manufacturing">Manufacturing</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="years_of_experience">Years of experience *</label>
+                      <input type="number" id="years_of_experience" name="years_of_experience">
+                  </div>
+                  <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                  <button type="submitting" style="border-color: #00d084; border-radius: 5px; font-color:var(--wp--preset--color--light-green-cyan)">Submit</button>
+              </form>
             </div>
         </div>
     

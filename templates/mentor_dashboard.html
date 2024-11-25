@@ -122,7 +122,7 @@
         }))
       } ((window, document), window._wpemojiSettings);
     </script>
-    <link rel='stylesheet' id='rm_material_icons-css' href='./css/custom-registration-form-builder-with-submission-manager-admin-css-material-icons.css'
+    <link rel='stylesheet' id='rm_material_icons-css' href="{{ url_for('static', filename='css/custom-registration-form-builder-with-submission-manager-admin-css-material-icons.css') }}"
     media='all' />
     <style id='wp-emoji-styles-inline-css'>
       img.wp-smiley, img.emoji { display: inline !important; border: none !important;
@@ -231,53 +231,77 @@
       2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;} :root :where(.wp-block-pullquote){font-size:
       1.5em;line-height: 1.6;}
     </style>
-    <link rel='stylesheet' id='profilegrid-user-profiles-groups-and-communities-css'
-    href='./css/profilegrid-user-profiles-groups-and-communities-public-css-profile-magic-public.css'
-    media='all' />
-    <link rel='stylesheet' id='pm-font-awesome-css' href='./css/profilegrid-user-profiles-groups-and-communities-public-css-font-awesome.css'
-    media='all' />
-    <link rel='stylesheet' id='pg-password-checker-css' href='./css/profilegrid-user-profiles-groups-and-communities-public-css-pg-password-checker.css'
-    media='all' />
-    <link rel='stylesheet' id='pg-profile-menu-css' href='./css/profilegrid-user-profiles-groups-and-communities-public-css-pg-profile-menu.css'
-    media='all' />
-    <link rel='stylesheet' id='pg-responsive-css' href='./css/profilegrid-user-profiles-groups-and-communities-public-css-pg-responsive-public.css'
-    media='all' />
-    <link rel='stylesheet' id='hello-elementor-css' href='./css/hello-elementor-style.min.css'
-    media='all' />
-    <link rel='stylesheet' id='hello-elementor-theme-style-css' href='./css/hello-elementor-theme.min.css'
-    media='all' />
-    <link rel='stylesheet' id='hello-elementor-header-footer-css' href='./css/hello-elementor-header-footer.min.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-frontend-css' href='./css/elementor-assets-css-frontend.min.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-post-5-css' href='./css/elementor-css-post-5.css'
-    media='all' />
-    <link rel='stylesheet' id='swiper-css' href='./css/elementor-assets-lib-swiper-v8-css-swiper.min.css'
-    media='all' />
-    <link rel='stylesheet' id='e-swiper-css' href='./css/elementor-assets-css-conditionals-e-swiper.min.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-pro-css' href='./css/elementor-pro-assets-css-frontend.min.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-global-css' href='./css/elementor-css-global.css'
-    media='all' />
-    <link rel='stylesheet' id='widget-heading-css' href='./css/elementor-assets-css-widget-heading.min.css'
-    media='all' />
-    <link rel='stylesheet' id='e-animation-fadeInUp-css' href='./css/elementor-assets-lib-animations-styles-fadeInUp.min.css'
-    media='all' />
-    <link rel='stylesheet' id='widget-text-editor-css' href='./css/elementor-assets-css-widget-text-editor.min.css'
-    media='all' />
-    <link rel='stylesheet' id='e-animation-fadeIn-css' href='./css/elementor-assets-lib-animations-styles-fadeIn.min.css'
-    media='all' />
-    <link rel='stylesheet' id='widget-icon-list-css' href='./css/elementor-assets-css-widget-icon-list.min.css'
-    media='all' />
-    <link rel='stylesheet' id='widget-nested-tabs-css' href='./css/elementor-assets-css-widget-nested-tabs.min.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-post-821-css' href='./css/elementor-css-post-821.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-post-27-css' href='./css/elementor-css-post-27.css'
-    media='all' />
-    <link rel='stylesheet' id='elementor-post-475-css' href='./css/elementor-css-post-475.css'
-    media='all' />
+    <!-- Link Stylesheets Dynamically Using Flask's url_for -->
+<link rel="stylesheet" id="profilegrid-user-profiles-groups-and-communities-css"
+href="{{ url_for('static', filename='css/profilegrid-user-profiles-groups-and-communities-public-css-profile-magic-public.css') }}"
+media="all" />
+<link rel="stylesheet" id="pm-font-awesome-css"
+href="{{ url_for('static', filename='css/profilegrid-user-profiles-groups-and-communities-public-css-font-awesome.css') }}"
+media="all" />
+<link rel="stylesheet" id="pg-password-checker-css"
+href="{{ url_for('static', filename='css/profilegrid-user-profiles-groups-and-communities-public-css-pg-password-checker.css') }}"
+media="all" />
+<link rel="stylesheet" id="pg-profile-menu-css"
+href="{{ url_for('static', filename='css/profilegrid-user-profiles-groups-and-communities-public-css-pg-profile-menu.css') }}"
+media="all" />
+<link rel="stylesheet" id="pg-responsive-css"
+href="{{ url_for('static', filename='css/profilegrid-user-profiles-groups-and-communities-public-css-pg-responsive-public.css') }}"
+media="all" />
+<link rel="stylesheet" id="hello-elementor-css"
+href="{{ url_for('static', filename='css/hello-elementor-style.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="hello-elementor-theme-style-css"
+href="{{ url_for('static', filename='css/hello-elementor-theme.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="hello-elementor-header-footer-css"
+href="{{ url_for('static', filename='css/hello-elementor-header-footer.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="elementor-frontend-css"
+href="{{ url_for('static', filename='css/elementor-assets-css-frontend.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="elementor-post-5-css"
+href="{{ url_for('static', filename='css/elementor-css-post-5.css') }}"
+media="all" />
+<link rel="stylesheet" id="swiper-css"
+href="{{ url_for('static', filename='css/elementor-assets-lib-swiper-v8-css-swiper.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="e-swiper-css"
+href="{{ url_for('static', filename='css/elementor-assets-css-conditionals-e-swiper.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="elementor-pro-css"
+href="{{ url_for('static', filename='css/elementor-pro-assets-css-frontend.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="elementor-global-css"
+href="{{ url_for('static', filename='css/elementor-css-global.css') }}"
+media="all" />
+<link rel="stylesheet" id="widget-heading-css"
+href="{{ url_for('static', filename='css/elementor-assets-css-widget-heading.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="e-animation-fadeInUp-css"
+href="{{ url_for('static', filename='css/elementor-assets-lib-animations-styles-fadeInUp.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="widget-text-editor-css"
+href="{{ url_for('static', filename='css/elementor-assets-css-widget-text-editor.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="e-animation-fadeIn-css"
+href="{{ url_for('static', filename='css/elementor-assets-lib-animations-styles-fadeIn.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="widget-icon-list-css"
+href="{{ url_for('static', filename='css/elementor-assets-css-widget-icon-list.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="widget-nested-tabs-css"
+href="{{ url_for('static', filename='css/elementor-assets-css-widget-nested-tabs.min.css') }}"
+media="all" />
+<link rel="stylesheet" id="elementor-post-821-css"
+href="{{ url_for('static', filename='css/elementor-css-post-821.css') }}"
+media="all" />
+<link rel="stylesheet" id="elementor-post-27-css"
+href="{{ url_for('static', filename='css/elementor-css-post-27.css') }}"
+media="all" />
+<link rel="stylesheet" id="elementor-post-475-css"
+href="{{ url_for('static', filename='css/elementor-css-post-475.css') }}"
+media="all" />
+
     <link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Inter+Tight%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CInter%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap&#038;ver=6.6.2'
     media='all' />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -293,9 +317,9 @@
       /* ]]\> */
       
     </script>
-    <script src="./js/jquery-jquery.min.js" id="jquery-core-js">
+    <script src="{{ url_for('static', filename='js/jquery-jquery.min.js') }}" id="jquery-core-js">
     </script>
-    <script src="./js/jquery-jquery-migrate.min.js" id="jquery-migrate-js">
+    <script src="{{ url_for('static', filename='js/jquery-jquery-migrate.min.js') }}" id="jquery-migrate-js">
     </script>
     <script src="./js/profilegrid-user-profiles-groups-and-communities-public-js-pg-profile-menu.js"
     id="pg-profile-menu.js-js">
@@ -382,14 +406,12 @@
       .e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload)
       * { background-image: none !important; } }
     </style>
-    <link rel="icon" href="./images/cropped-Uruti-logo-32x32.png" sizes="32x32"
-    />
-    <link rel="icon" href="./images/cropped-Uruti-logo-192x192.png" sizes="192x192"
-    />
-    <link rel="apple-touch-icon" href="./images/cropped-Uruti-logo-180x180.png"
-    />
-    <meta name="msapplication-TileImage" content="http://uruti.rw/wp-content/uploads/2024/10/cropped-Uruti-logo-270x270.png"
-    />
+    <!-- Dynamically Linked Icons and Meta Images -->
+    <link rel="icon" href="{{ url_for('static', filename='images/cropped-Uruti-logo-32x32.png') }}" sizes="32x32" />
+    <link rel="icon" href="{{ url_for('static', filename='images/cropped-Uruti-logo-192x192.png') }}" sizes="192x192" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/cropped-Uruti-logo-180x180.png') }}" />
+    <meta name="msapplication-TileImage" content="{{ url_for('static', filename='images/cropped-Uruti-logo-270x270.png') }}" />
+
   </head>
   
   <body class="page-template page-template-elementor_header_footer page page-id-821 elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-821 theme-helloelementor">
@@ -404,7 +426,7 @@
           <div class="elementor-element elementor-element-7d0f071 elementor-widget__width-initial elementor-widget elementor-widget-image"
           data-id="7d0f071" data-element_type="widget" data-widget_type="image.default">
             <div class="elementor-widget-container">
-              <img width="222" height="115" src="./images/2024-10-Uruti-logo.png" class="attachment-large size-large wp-image-17"
+              <img width="222" height="115" src="{{ url_for('static', filename='images/2024-10-Uruti-logo.png') }}" class="attachment-large size-large wp-image-17"
               alt="" />
             </div>
           </div>
@@ -432,11 +454,6 @@
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23">
                     <a href="{{url_for('contact')}}" class="elementor-item">
                       Contact Us
-                    </a>
-                  </li>
-                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
-                    <a href="{{url_for('registration')}}" class="elementor-item">
-                      Registration
                     </a>
                   </li>
                 </ul>
@@ -480,11 +497,7 @@
                       Contact Us
                     </a>
                   </li>
-                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
-                    <a href="{{url_for('registration')}}" class="elementor-item" tabindex="-1">
-                      Registration
-                    </a>
-                  </li>
+                  
                 </ul>
               </nav>
             </div>
@@ -493,20 +506,7 @@
           data-id="7d14850" data-element_type="widget" data-widget_type="button.default">
             <div class="elementor-widget-container">
               <div class="elementor-button-wrapper">
-                <a class="elementor-button elementor-button-link elementor-size-sm" href="http://uruti.rw/my-profile/">
-                  <span class="elementor-button-content-wrapper">
-                    <span class="elementor-button-icon">
-                      <svg aria-hidden="true" class="e-font-icon-svg e-far-user-circle" viewbox="0 0 496 512"
-                      xmlns="http://www.w3.org/2000/svg">
-                        <path d="M248 104c-53 0-96 43-96 96s43 96 96 96 96-43 96-96-43-96-96-96zm0 144c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm0-240C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-49.7 0-95.1-18.3-130.1-48.4 14.9-23 40.4-38.6 69.6-39.5 20.8 6.4 40.6 9.6 60.5 9.6s39.7-3.1 60.5-9.6c29.2 1 54.7 16.5 69.6 39.5-35 30.1-80.4 48.4-130.1 48.4zm162.7-84.1c-24.4-31.4-62.1-51.9-105.1-51.9-10.2 0-26 9.6-57.6 9.6-31.5 0-47.4-9.6-57.6-9.6-42.9 0-80.6 20.5-105.1 51.9C61.9 339.2 48 299.2 48 256c0-110.3 89.7-200 200-200s200 89.7 200 200c0 43.2-13.9 83.2-37.3 115.9z">
-                        </path>
-                      </svg>
-                    </span>
-                    <span class="elementor-button-text">
-                      My Account
-                    </span>
-                  </span>
-                </a>
+                
               </div>
             </div>
           </div>
@@ -658,7 +658,7 @@
                         data-id="6b9638b" data-element_type="widget" data-widget_type="heading.default">
                           <div class="elementor-widget-container">
                             <h2 class="elementor-heading-title elementor-size-default">
-                              niyonshutidavid
+                              
                             </h2>
                           </div>
                         </div>
@@ -706,78 +706,7 @@
                               </p>
                             </div>
                           </div>
-                          <div class="elementor-element elementor-element-9f59900 elementor-arrows-position-inside elementor-widget elementor-widget-loop-carousel"
-                          data-id="9f59900" data-element_type="widget" data-settings="{&quot;template_id&quot;:&quot;841&quot;,&quot;slides_to_show&quot;:&quot;1&quot;,&quot;_skin&quot;:&quot;post&quot;,&quot;slides_to_show_tablet&quot;:&quot;2&quot;,&quot;slides_to_show_mobile&quot;:&quot;1&quot;,&quot;slides_to_scroll&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;.elementor-widget-container&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;infinite&quot;:&quot;yes&quot;,&quot;speed&quot;:500,&quot;offset_sides&quot;:&quot;none&quot;,&quot;arrows&quot;:&quot;yes&quot;,&quot;image_spacing_custom&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;image_spacing_custom_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_spacing_custom_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
-                          data-widget_type="loop-carousel.post">
-                            <div class="elementor-widget-container">
-                              <div class="swiper elementor-loop-container elementor-grid" dir="ltr">
-                                <div class="swiper-wrapper" aria-live="off">
-                                  <style id="loop-841">
-                                    .elementor-841 .elementor-element.elementor-element-3f9dcf1{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--background-transition:0.3s;border-style:solid;--border-style:solid;border-width:1px
-                                    1px 1px 1px;--border-top-width:1px;--border-right-width:1px;--border-bottom-width:1px;--border-left-width:1px;border-color:var(
-                                    --e-global-color-accent );--border-color:var( --e-global-color-accent );}.elementor-841
-                                    .elementor-element.elementor-element-3f9dcf1, .elementor-841 .elementor-element.elementor-element-3f9dcf1::before{--border-transition:0.3s;}.elementor-841
-                                    .elementor-element.elementor-element-1a57ade .elementor-heading-title{color:var(
-                                    --e-global-color-secondary );font-family:"Inter Tight", Sans-serif;font-size:12px;font-weight:600;}
-                                  </style>
-                                  <div data-elementor-type="loop-item" data-elementor-id="841" class="elementor elementor-841 swiper-slide e-loop-item e-loop-item-516 post-516 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
-                                  data-elementor-post-type="elementor_library" role="group" aria-roledescription="slide"
-                                  data-custom-edit-handle="1">
-                                    <div class="elementor-element elementor-element-3f9dcf1 e-flex e-con-boxed e-con e-parent"
-                                    data-id="3f9dcf1" data-element_type="container">
-                                      <div class="e-con-inner">
-                                        <div class="elementor-element elementor-element-1a57ade elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading"
-                                        data-id="1a57ade" data-element_type="widget" data-widget_type="theme-post-title.default">
-                                          <div class="elementor-widget-container">
-                                            <h1 class="elementor-heading-title elementor-size-default">
-                                              <a href="http://uruti.rw/the-future-of-agritech-in-rwanda-opportunities-for-youth/">
-                                                The Future of AgriTech in Rwanda: Opportunities for Youth
-                                              </a>
-                                            </h1>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div data-elementor-type="loop-item" data-elementor-id="841" class="elementor elementor-841 swiper-slide e-loop-item e-loop-item-513 post-513 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
-                                  data-elementor-post-type="elementor_library" role="group" aria-roledescription="slide"
-                                  data-custom-edit-handle="1">
-                                    <div class="elementor-element elementor-element-3f9dcf1 e-flex e-con-boxed e-con e-parent"
-                                    data-id="3f9dcf1" data-element_type="container">
-                                      <div class="e-con-inner">
-                                        <div class="elementor-element elementor-element-1a57ade elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading"
-                                        data-id="1a57ade" data-element_type="widget" data-widget_type="theme-post-title.default">
-                                          <div class="elementor-widget-container">
-                                            <h1 class="elementor-heading-title elementor-size-default">
-                                              <a href="http://uruti.rw/empowering-rwandas-next-generation-of-agricultural-innovators/">
-                                                Empowering Rwanda&#8217;s Next Generation of Agricultural Innovators
-                                              </a>
-                                            </h1>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="elementor-swiper-button elementor-swiper-button-prev" role="button"
-                              tabindex="0">
-                                <svg aria-hidden="true" class="e-font-icon-svg e-far-caret-square-left"
-                                viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M272 157.1v197.8c0 10.7-13 16.1-20.5 8.5l-98.3-98.9c-4.7-4.7-4.7-12.2 0-16.9l98.3-98.9c7.5-7.7 20.5-2.3 20.5 8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z">
-                                  </path>
-                                </svg>
-                              </div>
-                              <div class="elementor-swiper-button elementor-swiper-button-next" role="button"
-                              tabindex="0">
-                                <svg aria-hidden="true" class="e-font-icon-svg e-far-caret-square-right"
-                                viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M176 354.9V157.1c0-10.7 13-16.1 20.5-8.5l98.3 98.9c4.7 4.7 4.7 12.2 0 16.9l-98.3 98.9c-7.5 7.7-20.5 2.3-20.5-8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z">
-                                  </path>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
+                          
                           <div class="elementor-element elementor-element-10a2891 elementor-widget elementor-widget-button"
                           data-id="10a2891" data-element_type="widget" data-widget_type="button.default">
                             <div class="elementor-widget-container">
@@ -863,50 +792,7 @@
                             </p>
                           </div>
                         </div>
-                        <div class="elementor-element elementor-element-b6c470f elementor-grid-2 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid"
-                        data-id="b6c470f" data-element_type="widget" data-settings="{&quot;template_id&quot;:&quot;841&quot;,&quot;columns&quot;:2,&quot;masonry&quot;:&quot;yes&quot;,&quot;pagination_type&quot;:&quot;prev_next&quot;,&quot;_skin&quot;:&quot;post&quot;,&quot;columns_tablet&quot;:&quot;2&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;pagination_load_type&quot;:&quot;page_reload&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
-                        data-widget_type="loop-grid.post">
-                          <div class="elementor-widget-container">
-                            <div class="elementor-loop-container elementor-grid">
-                              <div data-elementor-type="loop-item" data-elementor-id="841" class="elementor elementor-841 e-loop-item e-loop-item-516 post-516 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
-                              data-elementor-post-type="elementor_library" data-custom-edit-handle="1">
-                                <div class="elementor-element elementor-element-3f9dcf1 e-flex e-con-boxed e-con e-parent"
-                                data-id="3f9dcf1" data-element_type="container">
-                                  <div class="e-con-inner">
-                                    <div class="elementor-element elementor-element-1a57ade elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading"
-                                    data-id="1a57ade" data-element_type="widget" data-widget_type="theme-post-title.default">
-                                      <div class="elementor-widget-container">
-                                        <h1 class="elementor-heading-title elementor-size-default">
-                                          <a href="http://uruti.rw/the-future-of-agritech-in-rwanda-opportunities-for-youth/">
-                                            The Future of AgriTech in Rwanda: Opportunities for Youth
-                                          </a>
-                                        </h1>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div data-elementor-type="loop-item" data-elementor-id="841" class="elementor elementor-841 e-loop-item e-loop-item-513 post-513 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized"
-                              data-elementor-post-type="elementor_library" data-custom-edit-handle="1">
-                                <div class="elementor-element elementor-element-3f9dcf1 e-flex e-con-boxed e-con e-parent"
-                                data-id="3f9dcf1" data-element_type="container">
-                                  <div class="e-con-inner">
-                                    <div class="elementor-element elementor-element-1a57ade elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading"
-                                    data-id="1a57ade" data-element_type="widget" data-widget_type="theme-post-title.default">
-                                      <div class="elementor-widget-container">
-                                        <h1 class="elementor-heading-title elementor-size-default">
-                                          <a href="http://uruti.rw/empowering-rwandas-next-generation-of-agricultural-innovators/">
-                                            Empowering Rwanda&#8217;s Next Generation of Agricultural Innovators
-                                          </a>
-                                        </h1>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        
                         <div class="elementor-element elementor-element-48a17eb elementor-widget elementor-widget-button"
                         data-id="48a17eb" data-element_type="widget" data-widget_type="button.default">
                           <div class="elementor-widget-container">
@@ -1182,7 +1068,7 @@
                       data-id="7f5f06b" data-element_type="widget" data-widget_type="button.default">
                         <div class="elementor-widget-container">
                           <div class="elementor-button-wrapper">
-                            <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+                            <a class="elementor-button elementor-button-link elementor-size-sm" href="{{url_for('logout')}}">
                               <span class="elementor-button-content-wrapper">
                                 <span class="elementor-button-text">
                                   Sign out
@@ -1247,11 +1133,7 @@
                         Contact Us
                       </a>
                     </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
-                      <a href="{{url_for('registration')}}" class="elementor-item">
-                        Registration
-                      </a>
-                    </li>
+                  
                   </ul>
                 </nav>
                 <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"
@@ -1277,11 +1159,7 @@
                         Contact Us
                       </a>
                     </li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
-                      <a href="{{url_for('registration')}}" class="elementor-item" tabindex="-1">
-                        Registration
-                      </a>
-                    </li>
+                    
                   </ul>
                 </nav>
               </div>
@@ -1401,9 +1279,9 @@
         document.addEventListener(event, lazyloadRunObserver);
       });
     </script>
-    <script src="./js/jquery-ui-core.min.js" id="jquery-ui-core-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-core.min.js') }}" id="jquery-ui-core-js">
     </script>
-    <script src="./js/jquery-ui-datepicker.min.js" id="jquery-ui-datepicker-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-datepicker.min.js" id="jquery-ui-datepicker-js') }}">
     </script>
     <script id="jquery-ui-datepicker-js-after">
       jQuery(function(jQuery) {
@@ -1423,38 +1301,38 @@
         });
       });
     </script>
-    <script src="./js/jquery-ui-accordion.min.js" id="jquery-ui-accordion-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-accordion.min.js') }}" id="jquery-ui-accordion-js">
     </script>
-    <script src="./js/jquery-ui-mouse.min.js" id="jquery-ui-mouse-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-mouse.min.js') }}" id="jquery-ui-mouse-js">
     </script>
-    <script src="./js/jquery-ui-resizable.min.js" id="jquery-ui-resizable-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-resizable.min.js') }}" id="jquery-ui-resizable-js">
     </script>
-    <script src="./js/jquery-ui-draggable.min.js" id="jquery-ui-draggable-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-draggable.min.js') }}" id="jquery-ui-draggable-js">
     </script>
-    <script src="./js/jquery-ui-controlgroup.min.js" id="jquery-ui-controlgroup-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-controlgroup.min.js') }}" id="jquery-ui-controlgroup-js">
     </script>
-    <script src="./js/jquery-ui-checkboxradio.min.js" id="jquery-ui-checkboxradio-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-checkboxradio.min.js') }}" id="jquery-ui-checkboxradio-js">
     </script>
-    <script src="./js/jquery-ui-button.min.js" id="jquery-ui-button-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-button.min.js') }}" id="jquery-ui-button-js">
     </script>
-    <script src="./js/jquery-ui-dialog.min.js" id="jquery-ui-dialog-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-dialog.min.js') }}" id="jquery-ui-dialog-js">
     </script>
-    <script src="./js/jquery-ui-menu.min.js" id="jquery-ui-menu-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-menu.min.js') }}" id="jquery-ui-menu-js">
     </script>
-    <script src="./js/dist-dom-ready.min.js" id="wp-dom-ready-js">
+    <script src="{{ url_for('static', filename='js/dist-dom-ready.min.js') }}" id="wp-dom-ready-js">
     </script>
-    <script src="./js/dist-hooks.min.js" id="wp-hooks-js">
+    <script src="{{ url_for('static', filename='js/dist-hooks.min.js') }}" id="wp-hooks-js">
     </script>
-    <script src="./js/dist-i18n.min.js" id="wp-i18n-js">
+    <script src="{{ url_for('static', filename='js/dist-i18n.min.js') }}" id="wp-i18n-js">
     </script>
     <script id="wp-i18n-js-after">
       wp.i18n.setLocaleData({
         'text direction\u0004ltr': ['ltr']
       });
     </script>
-    <script src="./js/dist-a11y.min.js" id="wp-a11y-js">
+    <script src="{{ url_for('static', filename='js/dist-a11y.min.js') }}" id="wp-a11y-js">
     </script>
-    <script src="./js/jquery-ui-autocomplete.min.js" id="jquery-ui-autocomplete-js">
+    <script src="{{ url_for('static', filename='js/jquery-ui-autocomplete.min.js') }}" id="jquery-ui-autocomplete-js">
     </script>
     <script id="profile-magic-footer.js-js-extra">
       var show_rm_sumbmission_tab = {
@@ -1474,7 +1352,7 @@
         "ajaxurl": "\/wp-admin\/admin-ajax.php"
       };
     </script>
-    <script src="./js/fxa-heartbeat.min.js" id="heartbeat-js">
+    <script src="{{ url_for('static', filename='js/fxa-heartbeat.min.js') }}" id="heartbeat-js">
     </script>
     <script src="./js/profilegrid-user-profiles-groups-and-communities-public-js-pg-password-checker.js"
     id="pg-password-checker.js-js">
@@ -1528,19 +1406,19 @@
     <script src="./js/profilegrid-user-profiles-groups-and-communities-public-js-profile-magic-admin-power.js"
     id="profile-magic-admin-power.js-js">
     </script>
-    <script src="./js/hello-elementor-assets-js-hello-frontend.min.js" id="hello-theme-frontend-js">
+    <script src="{{ url_for('static', filename='js/hello-elementor-assets-js-hello-frontend.min.js') }}" id="hello-theme-frontend-js">
     </script>
-    <script src="./js/puu-imagesloaded.min.js" id="imagesloaded-js">
+    <script src="{{ url_for('static', filename='js/puu-imagesloaded.min.js') }}" id="imagesloaded-js">
     </script>
-    <script src="./js/elementor-pro-assets-lib-smartmenus-jquery.smartmenus.min.js"
+    <script src="{{ url_for('static', filename='js/elementor-pro-assets-lib-smartmenus-jquery.smartmenus.min.js') }}"
     id="smartmenus-js">
     </script>
-    <script src="./js/elementor-pro-assets-js-webpack-pro.runtime.min.js"
+    <script src="{{ url_for('static', filename='js/elementor-pro-assets-js-webpack-pro.runtime.min.js') }}"
     id="elementor-pro-webpack-runtime-js">
     </script>
-    <script src="./js/elementor-assets-js-webpack.runtime.min.js" id="elementor-webpack-runtime-js">
+    <script src="{{ url_for('static', filename='js/elementor-assets-js-webpack.runtime.min.js') }}" id="elementor-webpack-runtime-js">
     </script>
-    <script src="./js/elementor-assets-js-frontend-modules.min.js" id="elementor-frontend-modules-js">
+    <script src="{{ url_for('static', filename='js/elementor-assets-js-frontend-modules.min.js') }}" id="elementor-frontend-modules-js">
     </script>
     <script id="elementor-pro-frontend-js-before">
       var ElementorProFrontendConfig = {
@@ -1630,7 +1508,7 @@
         }
       };
     </script>
-    <script src="./js/elementor-pro-assets-js-frontend.min.js" id="elementor-pro-frontend-js">
+    <script src="{{ url_for('static', filename='js/elementor-pro-assets-js-frontend.min.js') }}" id="elementor-pro-frontend-js">
     </script>
     <script id="elementor-frontend-js-before">
       var elementorFrontendConfig = {
@@ -1774,9 +1652,9 @@
         }
       };
     </script>
-    <script src="./js/elementor-assets-js-frontend.min.js" id="elementor-frontend-js">
+    <script src="{{ url_for('static', filename='js/elementor-assets-js-frontend.min.js') }}" id="elementor-frontend-js">
     </script>
-    <script src="./js/elementor-pro-assets-js-preloaded-elements-handlers.min.js"
+    <script src="{{ url_for('static', filename='js/elementor-pro-assets-js-preloaded-elements-handlers.min.js') }}"
     id="pro-preloaded-elements-handlers-js">
     </script>
   </body>
