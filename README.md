@@ -19,9 +19,9 @@ Uruti provides a one-stop platform to address these challenges by:
 - Promoting AgriTech solutions for sustainable growth.  
 
 ## Features  
-- **User Dashboard**: Manage profiles, projects, and interactions.  
+- **User Dashboard**: different dashboard for different pages 
 - **Investment Opportunities**: Showcase projects to attract funding.  
-- **Mentorship Access**: Connect with experienced mentors in agriculture.  
+- **Registration Access**: register your role at one go 
 - **Community Resources**: Access articles, tutorials, and tools for modern agriculture.  
 
 ## Getting Started  
@@ -33,6 +33,9 @@ Before setting up the project, ensure you have the following installed:
 - npm (for managing frontend dependencies)  
 - Git
 - Docker
+
+### Attention  
+This is an ongoing project if you encounter any functional issues, be patient with us as it will be developed very soon.
 
 ### Repository Setup  
 1. Clone the repository:  
@@ -53,10 +56,9 @@ Before setting up the project, ensure you have the following installed:
    pip install -r requirements.txt  
    ```  
 
-4. Install frontend dependencies:  
+4. Change the port from 80 to 5000 in app.py line 208  if your flask runs on default port of 5000, if not don't change it:  
    ```bash  
-   cd frontend  
-   npm install  
+    app.run(host='0.0.0.0', port=5000, debug=True)
    ```  
 
 5. Set up the database:  
@@ -106,5 +108,21 @@ Contributions are welcome! To contribute:
 ## License  
 This project is licensed under the MIT License. See the LICENSE file for more details.  
 
+## Deployment  
+This project is deployed and hosted on (adaptable.io)[https://adaptable.io]
+
+## Testing   
+This project is tested using (selenium)[https://www.selenium.dev/]
+```bash
+cd test
+```
+```bash
+python3 seleniumtest.py
+```
+
 ## Contact  
-For any inquiries, feel free to reach out to us on Linkedin at `https://www.linkedin.com/company/uruti/`.  
+For any inquiries, feel free to reach out to us on Linkedin at (https://www.linkedin.com/company/uruti/)[https://www.linkedin.com/company/uruti/].  
+- [Send us a message](mailto:uruti.rw@gmail.com)
+
+## Attention  
+This is an ongoing project if you encounter any functional issues, be patient with us as it will be developed very soon.

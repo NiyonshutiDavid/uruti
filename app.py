@@ -143,6 +143,8 @@ def register(role):
             flash("Invalid role provided.")
             return redirect(url_for('registration'))
 
+        # Create tables if they don't exist
+        db.create_all()
         db.session.add(new_user)
         db.session.commit()
 
@@ -172,8 +174,8 @@ def investor_dashboard():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        email = request.form.get('log')
-        password = request.form.get('pwd')
+        email = request.form.get('email')
+        password = request.form.get('password')
         user = User.query.filter_by(email=email).first()
 
         if user and bcrypt.check_password_hash(user.password, password):
@@ -200,6 +202,14 @@ def logout():
     session.clear()
     flash("You have been logged out.")
     return redirect(url_for('login'))
+
+@app.route('/article1')
+def article1():
+    return render_template('article1.html')
+
+@app.route('/article2')
+def article2():
+    return render_template('article2.html')
 
 def setup():
     db.create_all()
