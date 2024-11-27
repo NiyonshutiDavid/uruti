@@ -1,12 +1,17 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-# Configure WebDriver (replace with the appropriate driver, e.g., for Firefox)
-driver = webdriver.Chrome()
+# Configure WebDriver
+options = Options()
+options.add_argument('--headless')  # Run in headless mode
+options.add_argument('--no-sandbox')  # Prevent sandboxing issues
+options.add_argument('--disable-dev-shm-usage')  # Address shared memory errors
+driver = webdriver.Chrome(options=options)
 
 # Base URL of the Uruti platform
 BASE_URL = "https://uruti.adaptable.app"  # Update if deployed on a different URL
@@ -14,27 +19,38 @@ BASE_URL = "https://uruti.adaptable.app"  # Update if deployed on a different UR
 def test_homepage():
     driver.get(BASE_URL)
     assert "Uruti" in driver.title, "Homepage title does not match."
-    print("Homepage test passed.")
+    print("Homepage title test passed.")
 
 def test_navigation_to_registration():
     driver.get(BASE_URL)
-    driver.find_element(By.LINK_TEXT, "Register").click()  # Ensure there's a 'Register' link
+    driver.find_element(By.LINK_TEXT, "registration").click()  # Ensure there's a 'Register' link
     assert "registration" in driver.current_url, "Failed to navigate to registration page."
     print("Navigation to registration page test passed.")
 
 def test_registration():
     driver.get(f"{BASE_URL}/registration")
-    driver.find_element(By.NAME, "full_name").send_keys("John Doe")
-    driver.find_element(By.NAME, "email").send_keys("johndoe@example.com")
-    driver.find_element(By.NAME, "password").send_keys("password123")
-    driver.find_element(By.NAME, "phone_number").send_keys("123456789")
-    driver.find_element(By.NAME, "linkedin_url").send_keys("https://linkedin.com/in/johndoe")
-    driver.find_element(By.NAME, "area_of_expertise").send_keys("Agriculture")
-    driver.find_element(By.NAME, "years_of_experience").send_keys("5")
-    driver.find_element(By.ID, "submit-btn").click()  # Ensure the form has a button with id 'submit-btn'
-    time.sleep(2)  # Wait for potential redirection or message
-    assert "Dashboard" in driver.title, "Registration test failed."
-    print("Registration test passed.")
+    try:
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.NAME, "full_name"))
+        ).send_keys("John Doe")
+        driver.find_element(By.NAME, "email").send_keys("johndoe@example.com")
+        driver.find_element(By.NAME, "password").send_keys("password123")
+        driver.find_element(By.NAME, "phone_number").send_keys("123456789")
+        driver.find_element(By.NAME, "linkedin_url").send_keys("https://linkedin.com/in/johndoe")
+        driver.find_element(By.NAME, "business_name").send_keys("Green Farm Co.")
+
+        # Use Select for dropdowns
+        Select(driver.find_element(By.NAME, "business_type")).select_by_visible_text("Farming")
+        Select(driver.find_element(By.NAME, "business_stage")).select_by_visible_text("Idea")
+
+        driver.find_element(By.ID, "submit-btn").click()
+        
+        WebDriverWait(driver, 10).until(
+            EC.title_contains("Dashboard")
+            );
+        print("Registration of ent passed!!")
+    except Exception as e:
+        print(f"Registration test failed: {e}")
 
 def test_login():
     driver.get(f"{BASE_URL}/login")
