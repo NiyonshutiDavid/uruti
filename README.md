@@ -109,10 +109,10 @@ Contributions are welcome! To contribute:
 This project is licensed under the MIT License. See the LICENSE file for more details.  
 
 ## Deployment  
-This project is deployed and hosted on (adaptable.io)[https://adaptable.io]
+This project is deployed and hosted on [adaptable.io](https://adaptable.io)
 
 ## Testing   
-This project is tested using (selenium)[https://www.selenium.dev/]
+This project is tested using [selenium](https://www.selenium.dev/)
 ```bash
 cd test
 ```
@@ -121,7 +121,7 @@ python3 seleniumtest.py
 ```
 
 ## Contact  
-For any inquiries, feel free to reach out to us on Linkedin at (https://www.linkedin.com/company/uruti/)[https://www.linkedin.com/company/uruti/].  
+For any inquiries, feel free to reach out to us on Linkedin at [https://www.linkedin.com/company/uruti/](https://www.linkedin.com/company/uruti/).  
 - [Send us a message](mailto:uruti.rw@gmail.com)
 
 ## Attention  
