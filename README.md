@@ -130,6 +130,6 @@ This is an ongoing project if you encounter any functional issues, be patient wi
 ## Responsiveness
 <img src="https://github.com/user-attachments/assets/59f6ea63-6409-470a-ad64-673ae18bb2ab" width="500" />
 <img src="https://github.com/user-attachments/assets/47dba72c-a7ec-49a6-af09-8e7796089163" width="200" />
-<img src="https://github.com/user-attachments/assets/e63b6138-a329-42e2-9c43-1c6f4f46b886" width="300" />
+<img src="https://github.com/user-attachments/assets/e63b6138-a329-42e2-9c43-1c6f4f46b886" width="250" />
 
 
