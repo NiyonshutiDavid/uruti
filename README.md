@@ -109,7 +109,7 @@ Contributions are welcome! To contribute:
 This project is licensed under the MIT License. See the LICENSE file for more details.  
 
 ## Deployment  
-This project is deployed and hosted on [adaptable.io](https://adaptable.io)
+This project is deployed and hosted using [adaptable.io](https://adaptable.io), access it here:[https://uruti.adaptable.app](https://uruti.adaptable.app)
 
 ## Testing   
 This project is tested using [selenium](https://www.selenium.dev/)
