@@ -1,0 +1,31 @@
+```mermaid
+graph TD
+    A[Start] --> B{User Role?};
+    B -- Consumer --> C[Create Account/Login];
+    B -- Artisan/Creator --> D[Create Account/Login];
+    B -- Admin --> E[Manage Accounts];
+    C --> F{Action?};
+    D --> G{Action?};
+    E --> H{Action: Modulate App/Manage Accounts};
+    F -- Purchase Product --> I[Process Order/Payment];
+    F -- Track Orders --> J[View Order Status];
+    F -- Follow/Unfollow --> K[Manage Follow List];
+    F -- Like/Comment/Share --> L[Engage on Posts];
+    F -- Send Message --> M[Direct Messaging];
+    G -- Sell Product --> N[List Product];
+    G -- Post Product --> O[Create Product Listing];
+    G -- Like/Comment/Share --> L;
+    G -- Send Message --> M;
+    H --> P[Update App Settings/User Accounts];
+    I --> Q[Order Confirmation];
+    J --> Q;
+    K --> R[Update User Profile];
+    L --> R;
+    M --> R;
+    N --> S[Update Product Inventory];
+    O --> S;
+    P --> T[Database Update];
+    Q --> T;
+    R --> T;
+    S --> T;
+    T --> U[End];
